@@ -335,8 +335,71 @@
 
 .slider-nav__arrow-left {
     padding-right: 11px;
+    cursor: pointer;
 }
 
 .slider-nav__arrow-right {
     padding-left: 10px;
+    cursor: pointer;
+}
+
+.slider-nav__arrow-left:hover, .slider-nav__arrow-right:hover {
+    filter: invert(50%) sepia(50%) saturate(2500%) hue-rotate(525deg) brightness(100%) contrast(100%);
+    transition: all .5s linear;
+}
+
+.implement {
+    height: 842px;
+    display: flex;
+    align-items: center;
+}
+
+.implement__picture {
+    padding-right: 139px;
+    margin-top: -20px;
+    padding-left: 269px;
+}
+
+.implement__info {
+    width: 407px;
+    margin-top: -20px;
+}
+
+.implement__title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #373737;
+    padding-bottom: 20px;
+}
+
+.implement__text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: #4E4E4E;
+    padding-bottom: 30px;
+}
+
+.implement__btn {
+    width: 180px;
+    height: 46px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    transition: all 0.5s ease-in;
+    background-color: #00AFDB;
+    letter-spacing: -0.6px;
+}
+
+.implement__btn:hover {
+    color:#00AFDB;
+    background-color:#8adff5;
 }
