@@ -9,14 +9,22 @@
 <body>
     <div class="wrapper">
         <div class="bg">
+            <h1 class="hidden">webdev</h1>
             <header class="header">
                 <div class="nav">
                     <ul class="nav__item">
-                        <li class="nav__list nav__list--active"><a href="#About" class="nav__link">About</a></li>
-                        <li class="nav__list"><a href="#Syllabus" class="nav__link">Syllabus</a></li>
-                        <li class="nav__list"><a href="#" class="nav__link"><span class="nav__logo"></span></a></li>
-                        <li class="nav__list"><a href="#Projects" class="nav__link">Projects</a></li>
-                        <li class="nav__list"><a href="#FAQ" class="nav__link">FAQ</a></li>
+                        <li class="nav__list">
+                            <a href="#About" class="nav__link nav__link--active">About</a>
+                        </li>
+                        <li class="nav__list">
+                            <a href="#Syllabus" class="nav__link">Syllabus</a>
+                        </li>
+                        <li class="nav__list">
+                            <a href="#Projects" class="nav__link">Projects</a>
+                        </li>
+                        <li class="nav__list">
+                            <a href="#FAQ" class="nav__link">FAQ</a>
+                        </li>
                     </ul>
                 </div>
             </header>
@@ -92,21 +100,37 @@
             <p class="download__text">Machine code was the language of early programs, written in the instruction set of the particular machine, often in binary notation.</p>
             <div class="download__buttons">
                 <button class="btn">
-                    <p class="btn__info">apple store</p>
-                    <div class="btn__ico">
+                    <span class="btn__info">apple store</span>
+                    <span class="btn__ico">
                         <img src="./assets/image/apple.svg" class="btn__mobile" alt="apple">
-                    </div>
+                    </span>
                 </button>
                 <button class="btn">
-                    <p class="btn__info">Play Market</p>
-                    <div class="btn__ico">
+                    <span class="btn__info">Play Market</span>
+                    <span class="btn__ico">
                         <img src="./assets/image/android.svg" class="btn__mobile" alt="android">
-                    </div>
+                    </span>
                 </button>
             </div>
         </section>
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <div class="footer__info">
+                    <ul class="footer__menu">
+                        <li class="footer__item">
+                            <a class="footer__link" href="#">Credits</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#">Privacy</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#">Our teams</a>
+                        </li>
+                    </ul>
+                    <p class="footer__text">by TonYem for RSS at 2020</p>
+                </div>
+            </div>
+        </footer>
     </div>
-
-
 </body>
 </html>
