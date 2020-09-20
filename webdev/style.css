@@ -369,7 +369,6 @@
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
-    letter-spacing: 1px;
     text-transform: uppercase;
     color: #373737;
     padding-bottom: 20px;
@@ -402,4 +401,147 @@
 .implement__btn:hover {
     color:#00AFDB;
     background-color:#8adff5;
+}
+
+.sign-up {
+    background: url(./assets/image/sign.png);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 598px;
+}
+
+.sign-up__title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding-top: 217px;
+    padding-bottom: 30px;
+}
+
+.sign-up__form {
+    margin-left: -65px;
+}
+
+.sign-up__input {
+    box-sizing: border-box;
+    width: 340px;
+    height: 46px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: #373737;
+    background: #FFFFFF;
+    border-radius: 0px;
+    border: 0;
+    outline: none;
+    padding-left: 24px;
+    padding-top: 14px;
+    padding-bottom: 12px;
+    position: relative;
+}
+
+.sign-up__btn {
+    width: 66px;
+    height: 46px;
+    background: #00AFDB;
+    border-radius: 0px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+}
+
+.sign-up__icon:hover {
+    filter: invert(50%) sepia(50%) saturate(2500%) hue-rotate(525deg) brightness(0%) contrast(100%);
+    transition: all .5s linear;
+}
+
+.download {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 468px;
+}
+
+.download__title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #373737;
+    letter-spacing: -0.2px;
+    padding-top: 121px;
+    padding-bottom: 20px;
+}
+
+.download__text {
+    width: 483px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: #4E4E4E;
+    padding-bottom: 30px;
+}
+
+.download__buttons {
+    width: 406px;
+    display: flex;
+}
+
+.btn {
+    width: 188px;
+    height: 50px;
+    background-color: #00AFDB;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-right: 30px;
+    position: relative;
+}
+
+.btn:last-child {
+    margin-right: 0px;
+}
+
+.btn:hover, .btn__ico:hover {
+    background-color:#8adff5;
+    transition: all .5s linear;
+}
+
+.btn__info {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    letter-spacing: -0.9px;
+    padding-right: 60px;
+    padding-top: 18px;
+    padding-bottom: 16px;
+}
+
+.btn__ico {
+    width: 60px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #009CC2;
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+.btn__mobile:hover {
+    filter: invert(50%) sepia(50%) saturate(2500%) hue-rotate(525deg) brightness(0%) contrast(100%);
+    transition: all .5s linear;
 }
