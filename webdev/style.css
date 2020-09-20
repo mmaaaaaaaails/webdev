@@ -8,6 +8,17 @@
         url('../fonts/roboto-v20-latin-regular.woff') format('woff'),
         url('../fonts/roboto-v20-latin-regular.ttf') format('truetype'),
 }
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Medium'), local('Roboto-Medium'),
+        url('../fonts/roboto-v20-latin-500.eot'),
+        url('../fonts/roboto-v20-latin-500.woff') format('woff'),
+        url('../fonts/roboto-v20-latin-500.ttf') format('truetype'),
+}
+
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
@@ -194,24 +205,26 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    height: 818px;
+    height: 842px;
 }
 
 .rappresent__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 20px;
 }
 
 .rappresent__title {
     width: 367px;
     font-weight: bold;
     font-size: 24px;
-    line-height: 28px;
+    line-height: 31px;
     letter-spacing: -0.2px;
     text-transform: uppercase;
     color: #373737;
-    padding-bottom: 26px;
+    padding-bottom: 20px;
+    margin-top: -20px;
 }
 
 .rappresent__text {
@@ -247,5 +260,83 @@
 
 .rappresent__picture {
     padding-top: 120px;
-    height: 572px;
+    height: 581px;
+    padding-right: 20px;
+}
+
+.community {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 504px;
+    background: #f5f6f7;
+    position: relative;
+}
+
+.community__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 298px;
+    padding-left: 272px;
+    margin-bottom: 20px;
+}
+
+.community__person {
+    padding-bottom: 20px;
+}
+
+.community__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #373737;
+    padding-bottom: 10px;
+}
+
+.community__text {
+    width: 298px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 145%;
+    text-align: center;
+    color: #4E4E4E;
+}
+
+.community__content {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.community__slider {
+    margin-right: 30px;
+}
+
+.community__slider:last-child {
+    margin-right: 0px;
+}
+
+.slider-nav {
+    position: absolute;
+    right: 268px;
+    top: 78px;
+}
+
+.slider-nav__pagination {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    color: #373737;
+}
+
+.slider-nav__arrow-left {
+    padding-right: 11px;
+}
+
+.slider-nav__arrow-right {
+    padding-left: 10px;
 }
