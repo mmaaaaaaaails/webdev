@@ -6,6 +6,7 @@ body {
     padding: 0;
     margin: 0;
     background-image: linear-gradient(to right, rgb(107, 99, 255), rgb(116, 100, 241), rgb(125, 100, 228), rgb(134, 101, 214), rgb(143, 102, 201), rgb(152, 102, 187), rgb(162, 103, 174), rgb(171, 103, 160), rgb(180, 104, 147), rgb(189, 105, 133), rgb(198, 105, 120), rgb(207, 106, 106));
+    font-family: 'Montserrat', sans-serif;
 }
 
 .calcutaor-grid {
@@ -14,24 +15,26 @@ body {
     align-content: center;
     min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(6, 80px);
 }
 
-.calcutaor-grid > button {
+button {
     cursor: pointer;
     font-size: 26px;
     border: 1px solid white;
     outline: none;
-    background-color: turquoise;
+    background-color: #2e303c;
+    color: white;
 }
 
-.calcutaor-grid > button:hover {
-    background-color: wheat;
+button:hover {
+    background-color: white;
+    color:  #2e303c;
 }
 
 .output {
     grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, .75);
+    background-color: #2e303c;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -49,4 +52,13 @@ body {
 .output .current-operand {
     color: white;
     font-size: 2.5rem;
+}
+
+.span-two {
+    grid-column: span 2;
+    background-color: #a9a9a9;
+}
+
+.operation {
+    background-color: #fd911d;
 }

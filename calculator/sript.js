@@ -49,6 +49,12 @@ class Calculator {
             case '÷':
                 computation = prev / current;
                 break;
+            case '**':
+                computation = prev ** current;
+                break;
+            case '√':
+                computation = prev < 0 ? 'Error' : Math.sqrt(prev);
+                break;
             default:
                 return;
         }
