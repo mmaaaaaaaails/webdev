@@ -12,6 +12,10 @@ class Calculator {
         this.operation = undefined;
     }
 
+    plusMinus() {
+        this.currentOperand = `-${this.currentOperand}`;
+    }
+
     delete() {
         this.currentOperand = this.currentOperand.toString().slice(0, -1);
     }
@@ -59,7 +63,7 @@ class Calculator {
                 return;
         }
 
-        this.currentOperand = computation;
+        this.currentOperand = Number(computation.toFixed(7));
         this.operation = undefined;
         this.previousOperand = '';
 
@@ -101,6 +105,7 @@ const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
+const plusMinusButton = document.querySelector('[data-plus-minus]');
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
@@ -130,5 +135,10 @@ allClearButton.addEventListener('click', button => {
 
 deleteButton.addEventListener('click', button => {
     calculator.delete();
+    calculator.updateDisplay();
+});
+
+plusMinusButton.addEventListener('click', button => {
+    calculator.plusMinus();
     calculator.updateDisplay();
 });
