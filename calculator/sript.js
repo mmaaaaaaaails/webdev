@@ -63,7 +63,7 @@ class Calculator {
                 return;
         }
 
-        this.currentOperand = Number(computation.toFixed(7));
+        this.currentOperand = computation === 'Error' ? 'Error' : Number(computation.toFixed(7));
         this.operation = undefined;
         this.previousOperand = '';
 
