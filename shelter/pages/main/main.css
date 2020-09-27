@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     font-style: normal;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
 }
 
 .wrapper {
@@ -15,7 +20,6 @@
     width: 100vw;
     position: sticky;
     top: 0;
-    background-color: black;
 }
 
 .header__logo {
@@ -28,8 +32,9 @@
     font-weight: normal;
     font-size: 32px;
     line-height: 110%;
-    letter-spacing: 6%;
+    letter-spacing: 0.06em;
     color: #F1CDB3;
+    padding-bottom: 10px;
 }
 
 .header__text {
@@ -37,7 +42,7 @@
     font-weight: normal;
     font-size: 13px;
     line-height: 15px;
-    letter-spacing: 10%;
+    letter-spacing: 0.1em;
     color: #FFFFFF;
 }
 
@@ -66,4 +71,62 @@
 .menu__link {
     color: #CDCDCD;
     text-decoration: none;
+}
+
+.menu__link--active {
+    border-bottom: solid 3px #F1CDB3;
+}
+
+
+.hero {
+    display: flex;
+}
+
+.hero__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero__title {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 44px;
+    line-height: 130%;
+    color: #FFFFFF;
+    max-width: 310px;
+    padding-bottom: 42px;
+}
+
+.hero__text {
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 160%;
+    color: #CDCDCD;
+    max-width: 460px;
+    padding-bottom: 41px;
+}
+
+.hero__btn {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    width: 207px;
+    height: 52px;
+    border-radius: 100px;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    background: #F1CDB3 linear-gradient(to left, transparent, transparent 50%, #fff 50%);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+}
+
+.hero__btn:hover {
+    color: #F1CDB3;
+    transition: all 0.5s ease-in;
+    background-position: 0 0;
 }
