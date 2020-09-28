@@ -1,25 +1,25 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     font-style: normal;
     box-sizing: border-box;
-}
-
-body {
-    background-color: black;
 }
 
 .wrapper {
     margin: 0 auto;
     max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .header {
     width: 100vw;
-    position: sticky;
-    top: 0;
+    position: absolute;
+    top: 60px;
+    left: -8px;
+}
+
+.header__block {
+    display: flex;
+    justify-content: space-between;
 }
 
 .header__logo {
@@ -42,7 +42,7 @@ body {
     font-weight: normal;
     font-size: 13px;
     line-height: 15px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.11em;
     color: #FFFFFF;
 }
 
@@ -73,19 +73,31 @@ body {
     text-decoration: none;
 }
 
+.menu__link:hover {
+    border-bottom: solid 3px #F1CDB3;
+    opacity: 0.6;
+}
+
 .menu__link--active {
     border-bottom: solid 3px #F1CDB3;
 }
 
 
 .hero {
+    background: url(/assets/images/noise_transparent.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+    padding-top: 180px;
+}
+
+.hero__block {
     display: flex;
+    justify-content: space-between;
 }
 
 .hero__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 81px;
 }
 
 .hero__title {
@@ -129,4 +141,47 @@ body {
     color: #F1CDB3;
     transition: all 0.5s ease-in;
     background-position: 0 0;
+}
+
+
+
+.about__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 588px;
+}
+
+.about__picture {
+    margin-right: 120px;
+    margin-bottom: 20px;
+}
+
+.about__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+.about__title {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    width: 370px;
+    color: #545454;
+    padding-bottom: 25px;
+}
+
+.about__text {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    width: 430px;
+    font-size: 15px;
+    line-height: 160%;
+    color: #4C4C4C;
+    padding-bottom: 25px;
 }
