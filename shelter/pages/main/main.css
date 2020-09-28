@@ -185,3 +185,155 @@
     color: #4C4C4C;
     padding-bottom: 25px;
 }
+
+
+.our-friends {
+    background: #F6F6F6;
+    height: 877px;
+}
+
+.our-friends__title {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+.our-friends__block {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 60px;
+}
+
+.our-friends__buttons {
+    display: flex;
+    align-items: center;
+    /* margin-right: -37px; */
+}
+
+.our-friends__buttons:last-child {
+    margin-left: 0px;
+}
+
+
+.buttons__arrow {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    background-color:#f6f6f6;
+    cursor: pointer;
+}
+
+.buttons__arrow:hover {
+    background: #F1CDB3;
+    transition: all 0.3s ease-in;
+}
+
+.arrow {
+    background: url(/assets/images/icons/arrow.svg) no-repeat;
+    width: 16px;
+    height: 13px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.arrow:hover {
+    filter: invert(50%) sepia(50%) saturate(2500%) hue-rotate(525deg) brightness(100%) contrast(100%);
+}
+
+.arrow--right {
+    transform: rotate(180deg);
+    margin-top: 7px;
+}
+
+
+.card {
+    width: 270px;
+    height: 435px;
+    background: #FAFAFA;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    margin: 0 37px;
+}
+
+.card:hover {
+    opacity: 0.7;
+}
+
+.card__name {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.card__btn {
+    width: 187px;
+    height: 52px;
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    border: 2px solid #F1CDB3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    outline: 0;
+    cursor: pointer;
+    background: #fafafa linear-gradient(to left, transparent, transparent 50%, #F1CDB3 50%);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+}
+
+.card__btn:hover {
+    color: #000000;
+    transition: all 0.5s ease-in;
+    background-position: 0 0;
+}
+
+
+
+.our-friends__bth {
+    display: flex;
+    justify-content: center;
+}
+
+.bth__lower {
+    width: 261px;
+    height: 52px;
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    background: #F1CDB3;
+    border-radius: 100px;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    background: #F1CDB3 linear-gradient(to left, transparent, transparent 50%, #fff 50%);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+}
+
+.bth__lower:hover {
+    color: #292929;
+    transition: all 0.5s ease-in;
+    background-position: 0 0;
+}
