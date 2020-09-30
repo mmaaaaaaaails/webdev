@@ -337,3 +337,179 @@
     transition: all 0.5s ease-in;
     background-position: 0 0;
 }
+
+
+.help {
+    height: 611px;
+}
+
+.help__info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.help__icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.help__title {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+.help__title--line {
+    display: block;
+}
+
+.icon {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.icon--pet {
+    background-image: url(/assets/images/icons/help/pet-food.svg);
+}
+
+.icon--transportation {
+    background-image: url(/assets/images/icons/help/transportation.svg);
+}
+
+.icon--toys {
+    background-image: url(/assets/images/icons/help/toys.svg);
+}
+
+.icon--bowls {
+    background-image: url(/assets/images/icons/help/bowl.svg);
+}
+
+.icon--shampoos {
+    background-image: url(/assets/images/icons/help/shampoo.svg);
+}
+
+.icon--vitamins {
+    background-image: url(/assets/images/icons/help/vitamins.svg);
+}
+
+.icon--medicines {
+    background-image: url(/assets/images/icons/help/medicines.svg);
+}
+
+.icon--collars {
+    background-image: url(/assets/images/icons/help/collars.svg);
+}
+
+.icon--sleeping {
+    background-image: url(/assets/images/icons/help/sleeping-area.svg);
+}
+
+.icon__subtitle {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    padding-top: 30px;
+}
+
+
+.addition {
+    height: 464px;
+    background: #F6F6F6;
+}
+
+.addition__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 82px;
+}
+
+.addition__picture {
+    margin-right: 30px;
+}
+
+.addition__info {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+.addition__title {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.addition__title--line {
+    display: block;
+    padding-bottom: 20px;
+}
+
+.addition__text {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #545454;
+    padding-bottom: 20px;
+}
+
+.addition__description {
+    font-family: Arial;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    align-items: center;
+    color: #B2B2B2;
+}
+
+.addition__credit {
+    display: flex;
+    width: 349px;
+    height: 43px;
+    background: #F1CDB3;
+    border-radius: 9px;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+}
+
+.credit {
+    height: 28px;
+    width: 30px;
+    display: inline-block;
+    background-size: cover;
+    margin-right: 14px;
+}
+
+.credit--card {
+    background-image: url(/assets/images/icons/credit-card.svg);
+}
+
+.credit__number {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
