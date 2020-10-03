@@ -213,7 +213,6 @@
 .our-friends__buttons {
     display: flex;
     align-items: center;
-    /* margin-right: -37px; */
 }
 
 .our-friends__buttons:last-child {
@@ -505,12 +504,12 @@
 }
 
 .credit {
-    height: 28px;
+    height: 23px;
     width: 30px;
     display: inline-block;
     background-size: cover;
     margin-right: 14px;
-    margin-top: -2px;
+    margin-top: 2px;
 }
 
 .credit--card {
@@ -536,8 +535,16 @@
 
 .footer__block {
     display: flex;
-    align-items: center;
     box-sizing: border-box;
+}
+
+.footer__content {
+    margin-top: 61px;
+}
+
+.footer__content--two {
+    margin-top: 61px;
+    margin-left: -20px;
 }
 
 .content__title {
@@ -554,21 +561,18 @@
     display: inline-block;
 }
 
-/* .content__list {
-    padding-bottom: 20px;
-} */
-
 .content__item {
     list-style: none;
-    padding-bottom: 20px;
 }
 
 .content__link {
     text-decoration: none;
+    display: flex;
+    margin-bottom: 40px;
 }
 
 .link__icon-email {
-    background-image: url(/assets/images/icons/mail.svg);
+    background-image: url(/assets/images/icons/icon-email.svg);
     width: 40px;
     height: 32px;
     background-size: cover;
@@ -577,7 +581,7 @@
 }
 
 .link__icon-phone {
-    background-image: url(/assets/images/icons/telephone.svg);
+    background-image: url(/assets/images/icons/phone.svg);
     width: 40px;
     height: 32px;
     background-size: cover;
@@ -592,6 +596,7 @@
     background-size: cover;
     display: inline-block;
     cursor: pointer;
+    padding-left: 20px;
 }
 
 .link__description {
@@ -602,12 +607,15 @@
     letter-spacing: 0.06em;
     color: #F1CDB3;
     padding-left: 20px;
-}
-
-.link__description--brackets {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .footer__picture {
     margin-top: 40px;
+}
+
+.indent {
+    margin-top: -7px;
 }
