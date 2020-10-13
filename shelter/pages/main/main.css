@@ -347,19 +347,11 @@
 
 .help__info {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 55px;
-    margin-left: -32px;
-    margin-right: -32px;
-}
-
-.help__info--line {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-left: 50px;
-    margin-right: 48px;
+    column-gap: 120px;
+    row-gap: 53px;
+    padding-bottom: 100px;
 }
 
 .help__icons {
@@ -732,6 +724,18 @@
     .btn__dog {
         margin-left: 15px;
         margin-bottom: 6px;
+    }
+
+
+    .help {
+        height: auto;
+    }
+
+    .help__info {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 0;
+        margin-right: 10px;
     }
 
 
