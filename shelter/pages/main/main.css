@@ -216,21 +216,17 @@
 
 .our-friends__block {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-bottom: 60px;
 }
 
+
 .our-friends__buttons {
-    display: flex;
-    align-items: center;
-}
-
-.our-friends__buttons:last-child {
-    margin-left: 0px;
+    position: relative;
 }
 
 
-.buttons__arrow {
+.buttons__arrow--left {
     width: 52px;
     height: 52px;
     border: 2px solid #F1CDB3;
@@ -238,6 +234,25 @@
     border-radius: 100px;
     background-color:#f6f6f6;
     cursor: pointer;
+    outline: none;
+    position: absolute;
+    z-index: 5;
+    bottom: 250px;
+}
+
+.buttons__arrow--right {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    background-color:#f6f6f6;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    bottom: 250px;
 }
 
 .buttons__arrow:hover {
@@ -257,6 +272,7 @@
     filter: invert(50%) sepia(50%) saturate(2500%) hue-rotate(525deg) brightness(100%) contrast(100%);
 }
 
+
 .arrow--right {
     transform: rotate(180deg);
     margin-top: 7px;
@@ -273,7 +289,7 @@
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
-    margin: 0 37px;
+    margin: 0 -15px;
 }
 
 .card:hover {
@@ -694,12 +710,12 @@
         margin-bottom: 0;
     }
 
-    .card:nth-child(4) {
+    .card:nth-child(3) {
         display: none;
     }
 
     .cat {
-        width: 180px;
+        width: 180px
     }
 
     .jennifer {
@@ -877,7 +893,7 @@
         height: auto;
         flex-direction: column-reverse;
         padding-top: 32px;
-        padding-bottom: 42px;
+        padding-bottom: 28px;
     }
 
     .about__title {
@@ -902,19 +918,33 @@
         height: auto;
     }
 
-    .our-friends__block {
+    /* .our-friends__block {
         display: block;
-    }
+    } */
 
     .our-friends__title {
         font-size: 25px;
+        padding-top: 42px;
+        padding-bottom: 42px;
     }
 
     .our-friends__bth {
         padding-bottom: 42px;
     }
 
-    .card:nth-child(4) {
+    .buttons__arrow--left {
+        bottom: 0;
+    }
+
+    .buttons__arrow--right {
+        bottom: 0;
+    }
+
+    .card {
+        margin-bottom: 52px;
+    }
+
+    .card:nth-child(2) {
         display: none;
     }
 
@@ -922,6 +952,24 @@
         display: none;
     }
 
+    .cat {
+        width: 67%;
+        margin-left: 14px;
+    }
+
+    .name__cat {
+        margin-top: 20px;
+    }
+
+    .buttons__arrow--left {
+        bottom: 40px;
+        left: 60px;
+    }
+
+    .buttons__arrow--right {
+        bottom: 40px;
+        right: 60px;
+    }
 
     .help {
         height: 745px
