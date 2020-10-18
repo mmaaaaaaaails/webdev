@@ -255,7 +255,7 @@
     bottom: 250px;
 }
 
-.buttons__arrow:hover {
+.buttons__arrow--right:hover, .buttons__arrow--left:hover {
     background: #F1CDB3;
     transition: all 0.3s ease-in;
 }
@@ -549,7 +549,7 @@
 
 .footer {
     background: url(/assets/images/footer-background.png);
-    height: 355px;
+    height: 350px;
 }
 
 .footer__block {
@@ -558,11 +558,11 @@
 }
 
 .footer__content {
-    margin-top: 61px;
+    margin-top: 62px;
 }
 
 .footer__content--two {
-    margin-top: 61px;
+    margin-top: 63px;
     margin-left: -20px;
 }
 
@@ -715,38 +715,34 @@
     }
 
     .cat {
-        width: 180px
+        width: 184px;
+        margin-left: 19px;
     }
 
     .jennifer {
-        margin-left: 20px;
+        margin-left: 10px;
     }
 
     .our-friends__block {
         padding-bottom: 57px;
     }
 
-    .our-friends__buttons {
-        margin-bottom: 6px;
-    }
-
     .name__cat {
         margin-top: 13px;
-        margin-right: 7px;
+        margin-left: 7px;
     }
 
     .card__btn {
-        margin-right: 9px;
+        margin-right: -7px;
     }
 
     .name__dog {
-        margin-bottom: 3px;
-        margin-left: 10px;
+        margin-right: 4px;
     }
 
     .btn__dog {
-        margin-left: 15px;
-        margin-bottom: 6px;
+        margin-right: 7px;
+        margin-bottom: 4px;
     }
 
 
@@ -759,6 +755,11 @@
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 0;
         margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .help__title {
+        padding-top: 78px;
     }
 
 
@@ -768,6 +769,7 @@
 
     .addition__block {
         flex-direction: column-reverse;
+        padding-top: 84px;
     }
 
     .addition__description {
@@ -798,6 +800,7 @@
         width: 302px;
         margin-top: 32px;
         margin-bottom: 20px;
+        margin-left: -5px;
     }
 
     .footer__picture {
@@ -1015,7 +1018,7 @@
     .addition__title {
         font-size: 25px;
         text-align: center;
-        padding-bottom: 7px;
+        padding-bottom: 4px;
         margin-left: -7px;
     }
 
@@ -1030,7 +1033,7 @@
     .addition__credit {
         width: 281px;
         margin-left: 5px;
-        margin-top: 2px;
+        margin-top: 3px;
         align-items: center;
     }
 
@@ -1041,8 +1044,8 @@
     .addition__description {
         max-width: 280px;
         text-align: justify;
-        padding-left: 10px;
-        padding-bottom: 26px;
+        padding-left: 5px;
+        padding-bottom: 45px;
     }
 
     .addition__picture {
@@ -1082,7 +1085,11 @@
     }
 
     .content__list {
-        margin-top: 20px;
+        margin-top: 19px;
+    }
+
+    .content__item {
+        margin-left: -2px;
     }
 
     .link__icon-email {
