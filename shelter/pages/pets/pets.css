@@ -343,3 +343,60 @@
 .indent {
     margin-top: -7px;
 }
+
+
+@media (min-width: 768px) and (max-width: 1279px) {
+
+    .wrapper {
+        padding: 0 30px;
+    }
+
+    .menu {
+        padding-bottom: 3px;
+    }
+
+    .our-friends__title {
+        padding-bottom: 28px;
+    }
+
+    .our-friends__block {
+        justify-content: space-evenly;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .our-friends__buttons {
+        padding-top: 10px;
+        padding-bottom: 77px;
+    }
+
+    .card:nth-child(n+7) {
+        display: none;
+    }
+
+    .footer {
+        height: auto;
+    }
+
+    .footer__block {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .footer__content {
+        width: 279px;
+        margin-top: 30px;
+        margin-right: 7px;
+    }
+
+    .footer__content--two {
+        width: 302px;
+        margin-top: 30px;
+        margin-left: -15px;
+    }
+
+    .footer__picture {
+        margin-top: 22px;
+    }
+
+}
