@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
+
 .wrapper {
     margin: 0 auto;
     max-width: 1280px;
@@ -15,6 +20,9 @@
     height: 120px;
     padding-top: 30px;
     background: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
 .header__block {
@@ -105,7 +113,7 @@
     text-align: center;
     letter-spacing: 0.06em;
     color: #545454;
-    padding-top: 81px;
+    padding-top: 201px;
     padding-bottom: 60px;
     margin-left: 2px;
 }
@@ -129,7 +137,7 @@
 }
 
 .card:hover {
-    opacity: 0.7;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .card__name {
@@ -243,11 +251,7 @@
     margin-bottom: 7px;
 }
 
-.number:hover, .arrow-one:hover, .arrow-two:hover {
-    filter: invert(50%) sepia(50%) saturate(2500%) hue-rotate(525deg) brightness(100%) contrast(100%);
-}
-
-.buttons__arrow--left:hover, .buttons__arrow--number:hover, .buttons__arrow--right:hover {
+.buttons__arrow--right:hover {
     background: #F1CDB3;
     transition: all 0.3s ease-in;
 }
@@ -406,6 +410,16 @@
 
 @media only screen and (max-width: 767px) {
 
+    .overlay--active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(41, 41, 41, 0.6);
+        z-index: 1;
+    }
+
     .wrapper {
         padding: 0 10px;
     }
@@ -413,10 +427,6 @@
     .header__block {
         display: block;
     }
-/*
-    .header__title, .header__text {
-        color: white;
-    } */
 
     .header__logo {
         padding-left: 10px;
@@ -466,13 +476,13 @@
     .header__logo--active {
         position: fixed;
         right: 120px;
-        /* background-color: #F1CDB3; */
     }
 
     .menu__lists {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-around;
         font-size: 32px;
         font-family: Arial;
         font-weight: normal;
@@ -507,7 +517,7 @@
 
     .our-friends__title {
         font-size: 25px;
-        padding-top: 42px;
+        padding-top: 201px;
         padding-bottom: 42px;
     }
 
