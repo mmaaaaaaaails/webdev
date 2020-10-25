@@ -1,7 +1,7 @@
-const time = document.getElementById('time'),
+const time = document.querySelector('.time'),
     greeting = document.getElementById('greeting'),
     name = document.getElementById('name'),
-    focuss = document.getElementById('focuss');
+    focusss = document.getElementById('focusss');
 
 
 const showAmPm = true;
@@ -10,15 +10,27 @@ function showTime() {
     let today = new Date(),
         hour = today.getHours(),
         min = today.getMinutes(),
-        sec = today.getSeconds();
-
+        sec = today.getSeconds(),
+        day = today.getDate();
+        // month = today.getMonth();
 
     const amPM = hour >= 12 ? 'PM' : 'AM';
 
-    time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPM : ''}`;
+    time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPM : '' }
+                        <p class="subtitle">${getWeekDay(today)}<span> , </span>${getMonthNow(today)} ${day}th</p>`;
 
     setTimeout(showTime, 1000);
 
+}
+
+function getWeekDay(date) {
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[date.getDay()];
+}
+
+function getMonthNow(date) {
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return months[date.getMonth()];
 }
 
 function addZero(n) {
@@ -72,28 +84,28 @@ function setName(e) {
 
 
 function getFocus() {
-    if(localStorage.getItem('focuss') === null) {
-        focuss.value = '[Enter focuss]';
+    if(localStorage.getItem('focusss') === null) {
+        focusss.textContent = '[Enter focusss]';
     } else {
-        focuss.value = localStorage.getItem('focuss');
+        focusss.textContent = localStorage.getItem('focusss');
     }
 }
 
 function setFocus(e) {
     if(e.type === 'keypress') {
         if(e.which == 13 || e.keyCode == 13) {
-            localStorage.setItem('focuss', e.target.value);
-            focuss.blur();
+            localStorage.setItem('focus', e.target.innerText);
+            focusss.blur();
         }
     } else {
-        localStorage.setItem('focuss', e.target.value);
+        localStorage.setItem('focus', e.target.innerText);
     }
 }
 
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
-focuss.addEventListener('keypress', setFocus);
-focuss.addEventListener('blur', setFocus);
+focusss.addEventListener('keypress', setFocus);
+focusss.addEventListener('blur', setFocus);
 
 getName();
 getFocus();
