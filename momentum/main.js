@@ -12,9 +12,7 @@ function showTime() {
         sec = today.getSeconds(),
         day = today.getDate();
 
-    const amPM = hour >= 12 ? 'PM' : 'AM';
-
-    time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPM : '' }
+    time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}
                         <p class="main__info">${getWeekDay(today)}<span> , </span>${getMonthNow(today)} ${day}th</p>`;
 
     setTimeout(showTime, 1000);
@@ -44,28 +42,38 @@ function changeBackground() {
     if(hour < 6) {
         document.body.style.backgroundImage = "url('./images/night.jpg')";
         document.body.style.backgroundSize = 'cover';
-        greeting.textContent = 'Good night';
+        greeting.textContent = 'Good night,';
     } else if (hour < 12) {
         document.body.style.backgroundImage = "url('./images/morning.jpg')";
         document.body.style.backgroundSize = 'cover';
-        greeting.textContent = 'Good morning';
+        greeting.textContent = 'Good morning,';
     } else if (hour < 18) {
         document.body.style.backgroundImage = "url('./images/afternoon.jpg')";
         document.body.style.backgroundSize = 'cover';
-        greeting.textContent = 'Good afternoon';
+        greeting.textContent = 'Good afternoon,';
     } else if (hour < 24) {
         document.body.style.backgroundImage = "url('./images/evening.jpg')";
         document.body.style.backgroundSize = 'cover';
-        greeting.textContent = 'Good evening';
+        greeting.textContent = 'Good evening,';
     }
 }
 
 
 function getName() {
     if(localStorage.getItem('name') === null) {
-        name.textContent = '[Enter Name]';
+        name.textContent = 'what is your name?';
     } else {
         name.textContent = localStorage.getItem('name');
+    }
+}
+
+let nameFocus = '';
+
+function hideName(e) {
+    localStorage.setItem('name', e.target.innerText);
+    nameStorage = localStorage.getItem('name');
+    if (e.type === 'click') {
+        name.textContent = '';
     }
 }
 
@@ -78,14 +86,29 @@ function setName(e) {
     } else {
         localStorage.setItem('name', e.target.innerText);
     }
+    if (localStorage.getItem('name') === '') {
+        localStorage.setItem('name', e.target.innerText);
+        name.textContent = nameStorage;
+        localStorage.removeItem('name');
+    }
 }
 
 
 function getFocus() {
-    if(localStorage.getItem('focusss') === null) {
-        focusss.textContent = '[Enter focusss]';
+    if(localStorage.getItem('focus') === null) {
+        focuss.textContent = 'Finish this task';
     } else {
-        focusss.textContent = localStorage.getItem('focusss');
+        focuss.textContent = localStorage.getItem('focus');
+    }
+}
+
+let focusStorage = '';
+
+function hideFocus(e) {
+    localStorage.setItem('focus', e.target.innerText);
+    focusStorage = localStorage.getItem('focus');
+    if (e.type === 'click') {
+        focuss.textContent = '';
     }
 }
 
@@ -93,17 +116,24 @@ function setFocus(e) {
     if(e.type === 'keypress') {
         if(e.which == 13 || e.keyCode == 13) {
             localStorage.setItem('focus', e.target.innerText);
-            focusss.blur();
+            focuss.blur();
         }
     } else {
         localStorage.setItem('focus', e.target.innerText);
+    }
+    if (localStorage.getItem('focus') === '') {
+        localStorage.setItem('focus', e.target.innerText);
+        focuss.textContent = focusStorage;
+        localStorage.removeItem('focus');
     }
 }
 
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
-focusss.addEventListener('keypress', setFocus);
-focusss.addEventListener('blur', setFocus);
+name.addEventListener('click', hideName);
+focuss.addEventListener('keypress', setFocus);
+focuss.addEventListener('blur', setFocus);
+focuss.addEventListener('click', hideFocus);
 
 getName();
 getFocus();

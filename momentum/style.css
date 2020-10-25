@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'Lato', sans-serif;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -26,12 +26,17 @@ body {
 }
 
 .main__title {
-    margin-bottom: 48px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .main__subtitle {
     margin-bottom: 8px;
-    opacity: 0.6;
+    margin-top: 8px;
+}
+
+.main__name {
+    display: inline-block;
 }
 
 
@@ -49,11 +54,11 @@ body {
     }
 
     .main__time {
-        font-size: 46px;
+        font-size: 60px;
     }
 
     .main__info {
-        font-size: 30px;
+        font-size: 24px;
         margin-bottom: 20px;
         margin-top: 20px;
     }
