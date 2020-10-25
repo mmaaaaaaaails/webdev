@@ -22,7 +22,7 @@ body {
 }
 
 .main__time {
-    font-size: 120px;
+    font-size: 90px;
 }
 
 .main__title {
@@ -39,24 +39,15 @@ body {
 }
 
 .main__info {
-    font-size: 60px;
+    font-size: 40px;
 }
 
 .quote {
-    width: 700px;
-    padding: 3px;
+    width: 500px;
+    padding: 20px;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 16px;
     background-color: rgba(0, 0, 0, 0.6);
-}
-
-.quote figcaption,
-.quote blockquote {
-    margin: 1em;
-}
-
-.quote figcaption {
-    text-align: right;
 }
 
 .btn {
@@ -66,18 +57,23 @@ body {
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.6);
     cursor: pointer;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
 .btn__rotate {
     width: 32px;
     height: 32px;
-    background-image: url('/images/rotate1.svg');
+    background-image: url('/./images/rotate1.svg');
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0 auto;
     filter: invert(50%) sepia(50%) saturate(2500%) hue-rotate(525deg) brightness(100%) contrast(100%);
+}
+
+.btn__rotate--active {
+    transform: rotate(180deg);
+    transition: all 0.2s
 }
 
 .btn:active,
@@ -87,28 +83,28 @@ body {
 
 .btn:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    transition: all .5s;
-    transform: scale(0.9);
-}
-
-.btn:active{
-    transform: scale(1.02)
+    transition: all .2s;
 }
 
 .weather {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+}
+
+.weather__container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .weather-icon {
     width: 64px;
     height: 64px;
     font-size: 4rem;
-    margin-top: 6px;
 }
-
-
 
 .city {
     display: inline-block;
@@ -117,8 +113,8 @@ body {
 
 @media only screen and (max-width: 767px) {
 
-    body {
-        height: 100vh;
+    .quote {
+        width: 300px;
     }
 
     .main__time {

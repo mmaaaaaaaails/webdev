@@ -1,7 +1,8 @@
 const time = document.querySelector('.main__time'),
     greeting = document.getElementById('greeting'),
     name = document.getElementById('name'),
-    focusss = document.getElementById('focusss');
+    city = document.querySelector('.city');
+
 
 const showAmPm = true;
 
@@ -40,7 +41,7 @@ function changeBackground() {
 
 
     if(hour < 6) {
-        document.body.style.backgroundImage = "url('./images/morning.jpg')";
+        document.body.style.backgroundImage = "url('./images/night.jpg')";
         document.body.style.backgroundSize = 'cover';
         greeting.textContent = 'Good night,';
     } else if (hour < 12) {
@@ -128,29 +129,64 @@ function setFocus(e) {
     }
 }
 
+function getCity() {
+    if(localStorage.getItem('city') === null) {
+        city.textContent = 'city';
+    } else {
+        city.textContent = localStorage.getItem('city');
+        getWeather();
+    }
+}
+
+let cityStorage = '';
+
+function hideCity(e) {
+    localStorage.setItem('city', e.target.innerText);
+    cityStorage = localStorage.getItem('city');
+    if (e.type === 'click') {
+        city.textContent = '';
+    }
+}
+
+city.onblur = function () {
+    localStorage.setItem("city", city.textContent);
+    getWeather();
+};
+
+function setCity(e) {
+    if (e.code === 'Enter') {
+        localStorage.setItem("city", e.target.innerText);
+        getWeather();
+        city.blur();
+    }
+}
 
 
 const blockquote = document.querySelector('blockquote');
-const figcaption = document.querySelector('figcaption');
 const btn = document.querySelector('.btn');
 
 async function getQuote() {
     const url = `https://quote-garden.herokuapp.com/api/v2/quotes/random`;
     const res = await fetch(url);
     const data = await res.json();
-    if (data.quote.quoteText.length > 100) {
+    if (data.quote.quoteText.length > 70) {
         getQuote();
     } else {
         blockquote.textContent = data.quote.quoteText;
     }
 }
 
+
+
 document.addEventListener('DOMContentLoaded', getQuote);
-btn.addEventListener('click', getQuote);
+
+btn.addEventListener('click', () => {
+    getQuote();
+    btn.classList.toggle('btn__rotate--active');
+});
 
 // weather
 
-const city = document.querySelector('.city');
 const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
@@ -163,6 +199,7 @@ async function getWeather() {
     const res = await fetch(url);
     const data = await res.json();
 
+
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${data.main.temp}°C`;
@@ -170,21 +207,13 @@ async function getWeather() {
     weatherDescription.textContent = data.weather[0].description;
     wind.textContent = `Wind: ${data.wind.speed} m/s`;
 
-
-    weatherIcon.className = 'weather-icon owf';
-
     document.addEventListener('DOMContentLoaded', getWeather);
     city.addEventListener('keypress', setCity);
+    city.textContent = localStorage.getItem("city");
+
 }
 
 getWeather();
-
-function setCity(event) {
-    if (event.code === 'Enter') {
-        getWeather();
-        city.blur();
-    }
-}
 
 
 name.addEventListener('keypress', setName);
@@ -193,6 +222,8 @@ name.addEventListener('click', hideName);
 focuss.addEventListener('keypress', setFocus);
 focuss.addEventListener('blur', setFocus);
 focuss.addEventListener('click', hideFocus);
+city.addEventListener('blur', setCity);
+city.addEventListener('click', hideCity);
 
 getName();
 getFocus();
