@@ -163,7 +163,7 @@ async function getWeather() {
     const res = await fetch(url);
     const data = await res.json();
 
-    weatherIcon.className = "weather-icon owf";
+    weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${data.main.temp}°C`;
     humidity.textContent = `Humidity: ${data.main.humidity}%`;
