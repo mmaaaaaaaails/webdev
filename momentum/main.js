@@ -148,6 +148,45 @@ async function getQuote() {
 document.addEventListener('DOMContentLoaded', getQuote);
 btn.addEventListener('click', getQuote);
 
+// weather
+
+const city = document.querySelector('.city');
+const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weather-description');
+const humidity = document.querySelector('.weather__humidity');
+const wind = document.querySelector('.weather__wind');
+
+
+async function getWeather() {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=en&appid=b2a6be783f202c5ed82810713fdbd194&units=metric`;
+    const res = await fetch(url);
+    const data = await res.json();
+
+    weatherIcon.className = "weather-icon owf";
+    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+    temperature.textContent = `${data.main.temp}°C`;
+    humidity.textContent = `Humidity: ${data.main.humidity}%`;
+    weatherDescription.textContent = data.weather[0].description;
+    wind.textContent = `Wind: ${data.wind.speed} m/s`;
+
+
+    weatherIcon.className = 'weather-icon owf';
+
+    document.addEventListener('DOMContentLoaded', getWeather);
+    city.addEventListener('keypress', setCity);
+}
+
+getWeather();
+
+function setCity(event) {
+    if (event.code === 'Enter') {
+        getWeather();
+        city.blur();
+    }
+}
+
+
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
 name.addEventListener('click', hideName);

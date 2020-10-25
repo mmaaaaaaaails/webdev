@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/owfont-regular.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <title>momentum</title>
 </head>
 <body>
     <div class="wrapper">
       <main class="main">
+
+        <div class="weather">
+          <i class="weather-icon owf owf-803"></i>
+          <div class="temperature"></div>
+          <div class="weather-description"></div>
+          <div class="weather__humidity"></div>
+          <div class="weather__wind"></div>
+          <div class="city" contenteditable="true">Minsk</div>
+        </div>
+
         <time class="main__time"></time>
         <h1 class="main__title">
           <span id="greeting"></span>
