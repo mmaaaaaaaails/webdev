@@ -128,6 +128,26 @@ function setFocus(e) {
     }
 }
 
+
+
+const blockquote = document.querySelector('blockquote');
+const figcaption = document.querySelector('figcaption');
+const btn = document.querySelector('.btn');
+
+async function getQuote() {
+    const url = `https://quote-garden.herokuapp.com/api/v2/quotes/random`;
+    const res = await fetch(url);
+    const data = await res.json();
+    if (data.quote.quoteText.length > 100) {
+        getQuote();
+    } else {
+        blockquote.textContent = data.quote.quoteText;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', getQuote);
+btn.addEventListener('click', getQuote);
+
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
 name.addEventListener('click', hideName);
