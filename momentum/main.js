@@ -1,8 +1,7 @@
-const time = document.querySelector('.time'),
+const time = document.querySelector('.main__time'),
     greeting = document.getElementById('greeting'),
     name = document.getElementById('name'),
     focusss = document.getElementById('focusss');
-
 
 const showAmPm = true;
 
@@ -12,12 +11,11 @@ function showTime() {
         min = today.getMinutes(),
         sec = today.getSeconds(),
         day = today.getDate();
-        // month = today.getMonth();
 
     const amPM = hour >= 12 ? 'PM' : 'AM';
 
     time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPM : '' }
-                        <p class="subtitle">${getWeekDay(today)}<span> , </span>${getMonthNow(today)} ${day}th</p>`;
+                        <p class="main__info">${getWeekDay(today)}<span> , </span>${getMonthNow(today)} ${day}th</p>`;
 
     setTimeout(showTime, 1000);
 

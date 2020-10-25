@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Merriweather', serif;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,34 +16,51 @@ body {
     color: white;
 }
 
-.time {
-    font-size: 8rem;
+.wrapper {
+    margin: 0 auto;
+    padding: 0 10px
 }
 
-h1 {
-    margin-bottom: 3rem;
+.main__time {
+    font-size: 120px;
 }
 
-h2 {
-    margin-bottom: 0.5rem;
+.main__title {
+    margin-bottom: 48px;
+}
+
+.main__subtitle {
+    margin-bottom: 8px;
     opacity: 0.6;
 }
 
-.input {
-    width: 300px;
-    height: 25px;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    font-size: 3 rem;
+
+.main__info {
+    font-size: 60px;
 }
 
-.subtitle {
-    font-size: 4rem;
-}
 
-@media(max-width: 768px) {
-    #time {
-        font-size: 6rem;
+@media only screen and (max-width: 767px) {
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
+
+    .main__time {
+        font-size: 46px;
+    }
+
+    .main__info {
+        font-size: 30px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .main__title {
+        font-size: 26px;
+    }
+
+
 }
