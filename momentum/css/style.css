@@ -80,7 +80,7 @@ body {
 .btn__rotate {
     width: 32px;
     height: 32px;
-    background-image: url(/images/icons/rotate1.svg);
+    background-image: url(/assets/images/icons/rotate1.svg);
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0 auto;

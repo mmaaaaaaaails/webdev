@@ -41,19 +41,19 @@ function changeBackground() {
 
 
     if(hour < 6) {
-        document.body.style.backgroundImage = "url('./images/night.jpg')";
+        document.body.style.backgroundImage = "url('./assets/images/night.jpg')";
         document.body.style.backgroundSize = 'cover';
         greeting.textContent = 'Good night,';
     } else if (hour < 12) {
-        document.body.style.backgroundImage = "url('./images/morning.jpg')";
+        document.body.style.backgroundImage = "url('./assets/images/morning.jpg')";
         document.body.style.backgroundSize = 'cover';
         greeting.textContent = 'Good morning,';
     } else if (hour < 18) {
-        document.body.style.backgroundImage = "url('./images/afternoon.jpg')";
+        document.body.style.backgroundImage = "url('./assets/images/afternoon.jpg')";
         document.body.style.backgroundSize = 'cover';
         greeting.textContent = 'Good afternoon,';
     } else if (hour < 24) {
-        document.body.style.backgroundImage = "url('./images/evening.jpg')";
+        document.body.style.backgroundImage = "url('./assets/images/evening.jpg')";
         document.body.style.backgroundSize = 'cover';
         greeting.textContent = 'Good evening,';
     }
