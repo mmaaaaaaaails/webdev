@@ -12,12 +12,9 @@ function showTime() {
         min = today.getMinutes(),
         sec = today.getSeconds(),
         day = today.getDate();
-
-    time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}
+        time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}
                         <p class="main__info">${getWeekDay(today)}<span> , </span>${getMonthNow(today)} ${day}th</p>`;
-
     setTimeout(showTime, 1000);
-
 }
 
 function getWeekDay(date) {
@@ -38,7 +35,6 @@ function addZero(n) {
 function changeBackground() {
     let today = new Date(),
         hour = today.getHours();
-
 
     if(hour < 6) {
         document.body.style.backgroundImage = "url('./assets/images/night.jpg')";
@@ -177,7 +173,6 @@ async function getQuote() {
 }
 
 
-
 document.addEventListener('DOMContentLoaded', getQuote);
 
 btn.addEventListener('click', () => {
@@ -193,12 +188,10 @@ const weatherDescription = document.querySelector('.weather-description');
 const humidity = document.querySelector('.weather__humidity');
 const wind = document.querySelector('.weather__wind');
 
-
 async function getWeather() {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=en&appid=b2a6be783f202c5ed82810713fdbd194&units=metric`;
     const res = await fetch(url);
     const data = await res.json();
-
 
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
@@ -209,11 +202,8 @@ async function getWeather() {
 
     document.addEventListener('DOMContentLoaded', getWeather);
     city.addEventListener('keypress', setCity);
-    city.textContent = localStorage.getItem("city");
-
+    city.textContent = localStorage.getItem('city');
 }
-
-getWeather();
 
 
 name.addEventListener('keypress', setName);
@@ -225,6 +215,7 @@ focuss.addEventListener('click', hideFocus);
 city.addEventListener('blur', setCity);
 city.addEventListener('click', hideCity);
 
+getWeather();
 getName();
 getFocus();
 changeBackground();
