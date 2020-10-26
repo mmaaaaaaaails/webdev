@@ -204,7 +204,7 @@ body {
 
 
 .hero {
-    background: url(/assets/images/noise_transparent.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+    background: url(../../assets/images/noise_transparent.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
     padding-top: 176px;
 }
 
@@ -386,7 +386,7 @@ body {
 }
 
 .arrow {
-    background: url(/assets/images/icons/arrow.svg) no-repeat;
+    background: url(../../assets/images/icons/arrow.svg) no-repeat;
     width: 16px;
     height: 13px;
     display: inline-block;
@@ -538,39 +538,39 @@ body {
 }
 
 .icon--pet {
-    background-image: url(/assets/images/icons/help/pet-food.svg);
+    background-image: url(../../assets/images/icons/help/pet-food.svg);
 }
 
 .icon--transportation {
-    background-image: url(/assets/images/icons/help/transportation.svg);
+    background-image: url(../../assets/images/icons/help/transportation.svg);
 }
 
 .icon--toys {
-    background-image: url(/assets/images/icons/help/toys.svg);
+    background-image: url(../../assets/images/icons/help/toys.svg);
 }
 
 .icon--bowls {
-    background-image: url(/assets/images/icons/help/bowl.svg);
+    background-image: url(../../assets/images/icons/help/bowl.svg);
 }
 
 .icon--shampoos {
-    background-image: url(/assets/images/icons/help/shampoo.svg);
+    background-image: url(../../assets/images/icons/help/shampoo.svg);
 }
 
 .icon--vitamins {
-    background-image: url(/assets/images/icons/help/vitamins.svg);
+    background-image: url(../../assets/images/icons/help/vitamins.svg);
 }
 
 .icon--medicines {
-    background-image: url(/assets/images/icons/help/medicines.svg);
+    background-image: url(../../assets/images/icons/help/medicines.svg);
 }
 
 .icon--collars {
-    background-image: url(/assets/images/icons/help/collars.svg);
+    background-image: url(../../assets/images/icons/help/collars.svg);
 }
 
 .icon--sleeping {
-    background-image: url(/assets/images/icons/help/sleeping-area.svg);
+    background-image: url(../../assets/images/icons/help/sleeping-area.svg);
 }
 
 .icon__subtitle {
@@ -662,7 +662,7 @@ body {
 }
 
 .credit--card {
-    background-image: url(/assets/images/icons/credit-card.svg);
+    background-image: url(../../assets/images/icons/credit-card.svg);
 }
 
 .credit__number {
@@ -683,7 +683,7 @@ body {
 }
 
 .footer {
-    background: url(/assets/images/footer-background.png);
+    background: url(../../assets/images/footer-background.png);
     height: 350px;
 }
 
@@ -726,7 +726,7 @@ body {
 }
 
 .link__icon-email {
-    background-image: url(/assets/images/icons/icon-email.svg);
+    background-image: url(../../assets/images/icons/icon-email.svg);
     width: 40px;
     height: 32px;
     background-size: cover;
@@ -735,7 +735,7 @@ body {
 }
 
 .link__icon-phone {
-    background-image: url(/assets/images/icons/phone.svg);
+    background-image: url(../../assets/images/icons/phone.svg);
     width: 40px;
     height: 32px;
     background-size: cover;
@@ -744,7 +744,7 @@ body {
 }
 
 .link__icon-pin {
-    background-image: url(/assets/images/icons/icon-marker.svg);
+    background-image: url(../../assets/images/icons/icon-marker.svg);
     width: 22px;
     height: 32px;
     background-size: cover;

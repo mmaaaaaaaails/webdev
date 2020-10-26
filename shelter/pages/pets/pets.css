@@ -228,7 +228,7 @@ body {
 }
 
 .number {
-    background: url(/assets/images/icons/1.svg) no-repeat;
+    background: url(../../assets/images/icons/1.svg) no-repeat;
     width: 9px;
     height: 23px;
     display: inline-block;
@@ -237,14 +237,14 @@ body {
 }
 
 .arrow-two {
-    background: url(/assets/images/icons/oneArrow.svg) no-repeat;
+    background: url(../../assets/images/icons/oneArrow.svg) no-repeat;
     width: 27px;
     height: 23px;
     display: inline-block;
 }
 
 .arrow-one {
-    background: url(/assets/images/icons/twoArrow.svg) no-repeat;
+    background: url(../../assets/images/icons/twoArrow.svg) no-repeat;
     width: 13px;
     height: 23px;
     display: inline-block;
@@ -268,7 +268,7 @@ body {
 
 
 .footer {
-    background: url(/assets/images/footer-background.png);
+    background: url(../../assets/images/footer-background.png);
     height: 355px;
 }
 
@@ -311,7 +311,7 @@ body {
 }
 
 .link__icon-email {
-    background-image: url(/assets/images/icons/icon-email.svg);
+    background-image: url(../../assets/images/icons/icon-email.svg);
     width: 40px;
     height: 32px;
     background-size: cover;
@@ -320,7 +320,7 @@ body {
 }
 
 .link__icon-phone {
-    background-image: url(/assets/images/icons/phone.svg);
+    background-image: url(../../assets/images/icons/phone.svg);
     width: 40px;
     height: 32px;
     background-size: cover;
@@ -329,7 +329,7 @@ body {
 }
 
 .link__icon-pin {
-    background-image: url(/assets/images/icons/icon-marker.svg);
+    background-image: url(../../assets/images/icons/icon-marker.svg);
     width: 22px;
     height: 32px;
     background-size: cover;
