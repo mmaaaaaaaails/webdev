@@ -2,7 +2,7 @@
 const HAMBURGER = document.querySelector('.hamburger');
 const MENU_LIST = document.querySelector('.menu__lists');
 const LOGO = document.querySelector('.header__logo');
-const OVERLAY = document.querySelector('.overlay')
+const OVERLAY = document.querySelector('.overlay');
 const FOOTER = document.querySelector('.footer');
 
 HAMBURGER.addEventListener('click', () => {
@@ -28,31 +28,23 @@ document.addEventListener('click', (event) => {
 
 hideMenu();
 
-let pets = [];
-let fullPetsList = [];
+// slider
 
-const request = new XMLHttpRequest();
-request.open('GET', './pets.json');
+const buttonsArrow = document.querySelectorAll('.buttons__arrow');
+const ourFriendsBlock = document.getElementById('our-friends__block');
+const slider = ourFriendsBlock.querySelectorAll('.slider');
+let currentSlide = 0;
 
-request.onload = () => {
-    pets = JSON.parse(request.response);
+buttonsArrow.forEach(element => {
+    element.addEventListener('click', () => {
+        ourFriendsBlock.querySelectorAll('.slider').forEach(element => element.classList.remove('slider--active'));
 
-    createPets();
-}
-
-const createPets = () => {
-    const elem = document.querySelector('#app')
-    elem.innerHTML += createElement();
-}
-
-// createElement = () => {
-//     let str = '';
-//     for (let i = 0; i < pets.length; i++) {
-//         str = `<img src=" ${ pets[i].img } ">`;
-//     }
-
-//     return str;
-// }
-
-
-// request.send();
+        if(currentSlide < slider.length - 1) {
+            currentSlide ++;
+            slider[currentSlide].classList.add('slider--active');
+        } else {
+            currentSlide = 0;
+            slider[currentSlide].classList.add('slider--active');
+        }
+    });
+});

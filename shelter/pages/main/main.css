@@ -9,7 +9,6 @@ body {
     overflow-x: hidden;
 }
 
-
 .modal {
     width: 900px;
     height: 500px;
@@ -346,8 +345,23 @@ body {
     position: relative;
 }
 
+.slider {
+    display: flex;
+    justify-content: inherit;
+    width: 100%;
+    transition: all 1s ease-in;
+}
 
-.buttons__arrow--left {
+.slider:not(.slider--active) {
+    display: none;
+    margin: 0 auto;
+    position: relative;
+    animation: 0.5s ease-in-out;
+    width: 100%;
+    transition: all 1s ease-in;
+}
+
+.buttons__arrow {
     width: 52px;
     height: 52px;
     border: 2px solid #F1CDB3;
@@ -361,19 +375,9 @@ body {
     bottom: 250px;
 }
 
+
 .buttons__arrow--right {
-    width: 52px;
-    height: 52px;
-    border: 2px solid #F1CDB3;
-    box-sizing: border-box;
-    border-radius: 100px;
-    background-color:#f6f6f6;
-    cursor: pointer;
-    outline: none;
-    position: absolute;
-    z-index: 5;
     right: 0;
-    bottom: 250px;
 }
 
 .buttons__arrow--right:hover, .buttons__arrow--left:hover {
@@ -1035,10 +1039,6 @@ body {
 
     .menu__lists--active {
         right: 0;
-    }
-
-    .menu__item {
-        margin-bottom: 40px;
     }
 
     .main--active {
