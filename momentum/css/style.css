@@ -12,6 +12,10 @@ body {
     overflow-x: hidden;
 }
 
+.overlay {
+    background-image: url('/assets/images/overlay.png');
+    background-size: cover;
+}
 
 .wrapper {
     margin: 0 auto;
