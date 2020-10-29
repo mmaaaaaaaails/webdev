@@ -1,10 +1,8 @@
-const time = document.querySelector('.main__time'),
+const time = document.querySelector('.content__time'),
     greeting = document.getElementById('greeting'),
     name = document.getElementById('name'),
-    city = document.querySelector('.city');
+    city = document.querySelector('.weather__city');
 
-
-const showAmPm = true;
 
 function showTime() {
     let today = new Date(),
@@ -13,7 +11,10 @@ function showTime() {
         sec = today.getSeconds(),
         day = today.getDate();
         time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}
-                        <p class="main__info">${getWeekDay(today)}<span> , </span>${getMonthNow(today)} ${day}th</p>`;
+                        <p class="content__info">${getWeekDay(today)}<span> , </span>${getMonthNow(today)} ${day}th</p>`;
+        if (min === 00 && sec === 00) {
+            getImage();
+        }
     setTimeout(showTime, 1000);
 }
 
@@ -31,26 +32,66 @@ function addZero(n) {
     return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
 
+// click image
+
+const baseNight = '/assets/images/night/';
+const baseMorning = '/assets/images/morning/';
+const baseDay = '/assets/images/day/';
+const baseEvening = '/assets/images/evening/';
+const images = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
+const imagesAll = '/assets/images/';
+const partDay = ['/night/', '/day/', '/morning/', '/evening/'];
+
+
+const shuffle = (arr) => {
+    return arr.sort(() => Math.round(Math.random() * 100) - 50);
+};
+
+shuffle(images);
+shuffle(partDay);
+
+function viewBgImage(data) {
+    const body = document.querySelector('body');
+    const src = data;
+    const img = document.createElement('img');
+    img.src = src;
+    img.onload = () => {
+        body.style.backgroundImage = `url(${src})`;
+    };
+}
+
+const mainBtn = document.querySelector('.main__btn');
+mainBtn.addEventListener('click', () => {
+    getImage();
+    mainBtn.classList.toggle('btn__rotate--active');
+});
+
+
+let i = 0;
+function getImage() {
+    const index = i % images.length;
+    const imageSrc = imagesAll + partDay[0] + images[index];
+    viewBgImage(imageSrc);
+    i++;
+    mainBtn.disabled = true;
+    setTimeout(function() { mainBtn.disabled = false; }, 1000);
+}
 
 function changeBackground() {
     let today = new Date(),
         hour = today.getHours();
 
     if(hour < 6) {
-        document.body.style.backgroundImage = "url('./assets/images/night.jpg')";
-        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundImage = `url('./assets/images/night/${images[1]}')`;
         greeting.textContent = 'Good night,';
     } else if (hour < 12) {
-        document.body.style.backgroundImage = "url('./assets/images/morning.jpg')";
-        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundImage = `url('./assets/images/morning/${images[1]}')`;
         greeting.textContent = 'Good morning,';
     } else if (hour < 18) {
-        document.body.style.backgroundImage = "url('./assets/images/afternoon.jpg')";
-        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundImage = `url('./assets/images/afternoon/${images[1]}')`;
         greeting.textContent = 'Good afternoon,';
     } else if (hour < 24) {
-        document.body.style.backgroundImage = "url('./assets/images/evening.jpg')";
-        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundImage = `url('./assets/images/evening/${images[1]}')`;
         greeting.textContent = 'Good evening,';
     }
 }
@@ -159,7 +200,7 @@ function setCity(e) {
 
 
 const blockquote = document.querySelector('blockquote');
-const btn = document.querySelector('.btn');
+const btn = document.querySelector('.btn__quote');
 
 async function getQuote() {
     const url = `https://quote-garden.herokuapp.com/api/v2/quotes/random`;
@@ -183,8 +224,8 @@ btn.addEventListener('click', () => {
 // weather
 
 const weatherIcon = document.querySelector('.weather-icon');
-const temperature = document.querySelector('.temperature');
-const weatherDescription = document.querySelector('.weather-description');
+const temperature = document.querySelector('.weather__temperature');
+const weatherDescription = document.querySelector('.weather__description');
 const humidity = document.querySelector('.weather__humidity');
 const wind = document.querySelector('.weather__wind');
 
@@ -216,6 +257,19 @@ async function getWeather() {
 
 
 }
+
+
+const loadingScreen = document.getElementById("cube-loader");
+
+
+document.addEventListener("readystatechange", (event) => {
+    if (document.readyState === "complete") {
+        loadingScreen.classList.add("transparent");
+        setTimeout(() => {
+            loadingScreen.remove();
+        }, 2000);
+    }
+});
 
 
 name.addEventListener('keypress', setName);

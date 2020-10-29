@@ -11,34 +11,47 @@
 <body>
     <div class="wrapper">
       <main class="main">
-        <div class="weather">
+        <div class="main__weather">
             <div class="weather__container">
               <i class="weather-icon owf owf-804"></i>
-              <div class="temperature"></div>
-              <div class="weather-description"></div>
+              <div class="weather__temperature"></div>
+              <div class="weather__description"></div>
               <div class="weather__humidity"></div>
               <div class="weather__wind"></div>
-              <div class="city" contenteditable="true">Minsk</div>
+              <div class="weather__city" contenteditable="true">Minsk</div>
             </div>
         </div>
+        <button class="main__btn">
+          <img src="./assets/images/icons/rotate1.svg" class="btn__rotate" alt="rotate">
+        </button>
         <div class="main__content">
-          <time class="main__time"></time>
-          <h1 class="main__title">
+          <time class="content__time"></time>
+          <h1 class="content__title">
             <span id="greeting"></span>
-            <span class="main__name" id="name" contenteditable="true"></span>
+            <span class="content__name" id="name" contenteditable="true"></span>
           </h1>
-          <h2>What is your focus for today?</h2>
-          <div class="container">
-            <span class="main__subtitle" id="focuss" contenteditable="true"></span>
+          <h2 class="content__question">What is your focus for today?</h2>
+          <div class="content__container">
+            <span class="content__subtitle" id="focuss" contenteditable="true"></span>
           </div>
         </div>
         <div class="main__quote">
-          <button class="btn">
+          <button class="btn__quote">
               <img src="./assets/images/icons/rotate1.svg" class="btn__rotate" alt="rotate">
           </button>
           <span class="quote">
             <blockquote></blockquote>
           </span>
+        </div>
+        <div id="cube-loader" class="loading">
+          <div class="caption">
+            <div class="cube-loader">
+              <div class="cube loader-1"></div>
+              <div class="cube loader-2"></div>
+              <div class="cube loader-4"></div>
+              <div class="cube loader-3"></div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
