@@ -34,12 +34,12 @@ function addZero(n) {
 
 // click image
 
-const baseNight = '/assets/images/night/';
-const baseMorning = '/assets/images/morning/';
-const baseDay = '/assets/images/day/';
-const baseEvening = '/assets/images/evening/';
+const baseNight = './assets/images/night/';
+const baseMorning = './assets/images/morning/';
+const baseDay = './assets/images/day/';
+const baseEvening = './assets/images/evening/';
 const images = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
-const imagesAll = '/assets/images/';
+const imagesAll = './assets/images/';
 const partDay = ['night/', 'day/', 'morning/', 'evening/'];
 
 
