@@ -48,7 +48,7 @@ const shuffle = (arr) => {
 };
 
 shuffle(images);
-shuffle(partDay);
+// shuffle(partDay);
 
 function viewBgImage(data) {
     const body = document.querySelector('body');
@@ -70,7 +70,7 @@ mainBtn.addEventListener('click', () => {
 let i = 0;
 function getImage() {
     const index = i % images.length;
-    const imageSrc = imagesAll + partDay[0] + images[index];
+    const imageSrc = baseDay + images[index];
     viewBgImage(imageSrc);
     i++;
     mainBtn.disabled = true;
@@ -88,7 +88,7 @@ function changeBackground() {
         document.body.style.backgroundImage = `url('./assets/images/morning/${images[1]}')`;
         greeting.textContent = 'Good morning,';
     } else if (hour < 18) {
-        document.body.style.backgroundImage = `url('./assets/images/afternoon/${images[1]}')`;
+        document.body.style.backgroundImage = `url('./assets/images/day/${images[1]}')`;
         greeting.textContent = 'Good afternoon,';
     } else if (hour < 24) {
         document.body.style.backgroundImage = `url('./assets/images/evening/${images[1]}')`;
@@ -260,8 +260,6 @@ async function getWeather() {
 
 
 const loadingScreen = document.getElementById("cube-loader");
-
-
 document.addEventListener("readystatechange", (event) => {
     if (document.readyState === "complete") {
         loadingScreen.classList.add("transparent");
