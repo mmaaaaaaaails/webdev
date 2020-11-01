@@ -28,7 +28,7 @@ body {
     margin-top: 10px;
     border: 0;
     outline: none;
-    height: calc(100vh - 380px);
+    height: calc(100vh - 455px);
 
 }
 
@@ -40,7 +40,7 @@ body {
     padding: 5px 0;
     user-select: none;
     transition: bottom 0.4s;
-    top: 60vh;
+    top: 57vh;
 }
 
 .keyboard--hidden {
