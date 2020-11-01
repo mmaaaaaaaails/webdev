@@ -57,26 +57,24 @@ const Keyboard = {
     createKeys() {
         const fragment = document.createDocumentFragment();
         const keyLayout = [
-            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
-            'Tab','`', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']',
+            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', '⇐',
+            'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']',
             'Caps Lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'enter',
             'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '↑', 'done',
             'ctrl','space', '←', '↓', '→',
         ];
 
-        // 'ctrl','space', '←', '↓', '→',
-
         keyLayout.forEach(key => {
             const keyElement = document.createElement('button');
-            const insertLineBreak = ['backspace', ']', 'enter', 'done'].indexOf(key) !== -1;
+            const insertLineBreak = ['⇐', ']', 'enter', 'done'].indexOf(key) !== -1;
 
-            keyElement.setAttribute('type', 'button');
+            keyElement.setAttribute('id', 'button');
             keyElement.classList.add('keyboard__key');
 
             switch (key) {
-                case 'backspace':
+                case '⇐':
                     keyElement.classList.add('keyboard__key--wide');
-                    keyElement.innerHTML = 'backspace';
+                    keyElement.innerHTML = '⇐';
 
                     keyElement.addEventListener('click', () => {
                         this.properties.value = this.properties.value.substring(0, this.properties.value.length - 1);
@@ -162,8 +160,6 @@ const Keyboard = {
 
                     break;
 
-
-
                 case "done":
                     keyElement.classList.add("keyboard__key--wide", "keyboard__key--dark");
                     keyElement.innerHTML = 'done';
@@ -195,6 +191,8 @@ const Keyboard = {
 
         return fragment;
     },
+
+
 
     triggerEvent(handlerName) {
         if (typeof this.eventHandlers[handlerName] == 'function') {
@@ -246,7 +244,11 @@ const Keyboard = {
         }
         pos = pos - prevLine;
         textareaInput.selectionStart = textareaInput.selectionEnd = nextLine + pos;
-    }
+    },
+
+
+
+
 };
 
 window.addEventListener('DOMContentLoaded', function () {
