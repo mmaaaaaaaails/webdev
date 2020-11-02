@@ -29,8 +29,8 @@ const Keyboard = {
 
     properties: {
         value: '',
-        capsLock: false,
         shift: false,
+        capsLock: false,
         lang: 'en',
     },
 
@@ -61,33 +61,33 @@ const Keyboard = {
         const fragment = document.createDocumentFragment();
         const keyEn = [
             '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', 'backspace',
-            'en', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']',
+            'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', 'done',
             'caps Lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'enter',
-            'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '↑', 'done',
-            'space', '←', '↓', '→',
+            'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '↑',
+            'en','space', '←', '↓', '→',
         ];
 
         const KeyEnShift = [
             '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', 'backspace',
-            'en', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}',
+            'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}','done',
             'caps Lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ':', "'", 'enter',
-            'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?', '↑', 'done',
-            'space', '←', '↓', '→',
+            'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?', '↑',
+            'en','space', '←', '↓', '→',
         ];
 
         const keyRu = [
             '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', 'backspace',
-            'en', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ',
+            'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ','done',
             'caps Lock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'enter',
-            'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '↑', 'done',
-            'space', '←', '↓', '→',
+            'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '↑',
+            'ru','space', '←', '↓', '→',
         ];
         const keyRuShift = [
             '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '+', 'backspace',
-            'en', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ',
+            'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ','ru','done',
             'caps Lock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'enter',
-            'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', ',', '↑', 'done',
-            'space', '←', '↓', '→',
+            'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', ',', '↑',
+            'ru','space', '←', '↓', '→',
         ];
 
         let layout = [];
@@ -108,9 +108,9 @@ const Keyboard = {
 
         layout.forEach(key => {
             const keyElement = document.createElement('button');
-            const insertLineBreak = ['backspace', ']', 'enter', 'done'].indexOf(key) !== -1;
+            const insertLineBreak = ['backspace','done', 'enter', 'done'].indexOf(key) !== -1;
 
-            keyElement.setAttribute('type', 'button');
+            keyElement.setAttribute('id', 'button');
             keyElement.classList.add('keyboard__key');
 
             switch (key) {
@@ -140,12 +140,16 @@ const Keyboard = {
                     break;
 
                 case 'shift':
-                    keyElement.classList.add('keyboard__key--wide', 'keyboard__key--activatable');
+                    if (this.properties.shift) {
+                        keyElement.classList.add('keyboard__key--wide', 'keyboard__key--activatable', 'keyboard__key--shift');
+                    } else {
+                        keyElement.classList.add('keyboard__key--wide', 'keyboard__key--activatable');
+                    }
                     keyElement.innerHTML = '⇑';
 
                     keyElement.addEventListener('click', () => {
                         this.toggleShift();
-                        keyElement.classList.toggle('keyboard__key--active', this.properties.shift);
+                        keyElement.classList.toggle('keyboard__key--shift', this.properties.shift);
                         textareaInput.focus();
                     });
 
@@ -236,7 +240,7 @@ const Keyboard = {
                     });
 
                     break;
-                };
+                }
 
                 default:
                     keyElement.textContent = key.toLowerCase();
@@ -345,10 +349,6 @@ const Keyboard = {
         pos = pos - prevLine;
         textareaInput.selectionStart = textareaInput.selectionEnd = nextLine + pos;
     },
-
-
-
-
 };
 
 window.addEventListener('DOMContentLoaded', function () {
