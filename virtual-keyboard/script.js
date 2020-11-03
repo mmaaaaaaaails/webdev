@@ -32,6 +32,7 @@ const Keyboard = {
         shift: false,
         capsLock: false,
         lang: 'en',
+        sound: true,
     },
 
     init() {
@@ -63,7 +64,7 @@ const Keyboard = {
             '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', 'backspace',
             'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', 'done',
             'caps Lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'enter',
-            'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '↑',
+            'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '↑', 'sound',
             'en','space', '←', '↓', '→',
         ];
 
@@ -71,7 +72,7 @@ const Keyboard = {
             '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', 'backspace',
             'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}','done',
             'caps Lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ':', "'", 'enter',
-            'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?', '↑',
+            'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?', '↑','sound',
             'en','space', '←', '↓', '→',
         ];
 
@@ -79,14 +80,14 @@ const Keyboard = {
             '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', 'backspace',
             'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ','done',
             'caps Lock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'enter',
-            'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '↑',
+            'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '↑','sound',
             'ru','space', '←', '↓', '→',
         ];
         const keyRuShift = [
             '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '+', 'backspace',
             'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ','ru','done',
             'caps Lock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'enter',
-            'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', ',', '↑',
+            'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', ',', '↑','sound',
             'ru','space', '←', '↓', '→',
         ];
 
@@ -105,13 +106,24 @@ const Keyboard = {
             }
         }
 
+        const createIconHTML = (icon_name) => {
+            return `<i class="material-icons">${icon_name}</i>`;
+            };
 
         layout.forEach(key => {
             const keyElement = document.createElement('button');
-            const insertLineBreak = ['backspace','done', 'enter', 'done'].indexOf(key) !== -1;
+            const insertLineBreak = ['backspace','done', 'enter', 'sound'].indexOf(key) !== -1;
 
             keyElement.setAttribute('id', 'button');
             keyElement.classList.add('keyboard__key');
+
+            keyElement.addEventListener('click', () => {
+                if (this.properties.sound) {
+                    let audio = new Audio('assets/sounds/button1.wav');
+                    audio.currentTime = 0;
+                    audio.play();
+                }
+            });
 
             switch (key) {
                 case 'backspace':
@@ -120,6 +132,11 @@ const Keyboard = {
 
                     keyElement.addEventListener('click', () => {
                         this.properties.value = this.properties.value.substring(0, this.properties.value.length - 1);
+                        if (this.properties.sound) {
+                            let audio = new Audio('assets/sounds/back.wav');
+                            audio.currentTime = 0;
+                            audio.play();
+                        }
                         this.triggerEvent('oninput');
                         textareaInput.focus();
                     });
@@ -130,9 +147,13 @@ const Keyboard = {
                     keyElement.classList.add('keyboard__key--wide', 'keyboard__key--activatable');
                     keyElement.innerHTML = '▲';
 
-
                     keyElement.addEventListener('click', () => {
                         this.toggleCapsLock();
+                        if (this.properties.sound) {
+                            let audio = new Audio('assets/sounds/caps.wav');
+                            audio.currentTime = 0;
+                            audio.play();
+                        }
                         keyElement.classList.toggle('keyboard__key--active', this.properties.capsLock);
                         textareaInput.focus();
                     });
@@ -149,6 +170,11 @@ const Keyboard = {
 
                     keyElement.addEventListener('click', () => {
                         this.toggleShift();
+                        if (this.properties.sound) {
+                            let audio = new Audio('assets/sounds/shift.wav');
+                            audio.currentTime = 0;
+                            audio.play();
+                        }
                         keyElement.classList.toggle('keyboard__key--shift', this.properties.shift);
                         textareaInput.focus();
                     });
@@ -162,10 +188,28 @@ const Keyboard = {
 
                     keyElement.addEventListener('click', () => {
                         this.properties.value += '\n';
+                        if (this.properties.sound) {
+                            let audio = new Audio('assets/sounds/enter.wav');
+                            audio.currentTime = 0;
+                            audio.play();
+                        }
                         this.triggerEvent('oninput');
                         textareaInput.focus();
                     });
                 }
+
+                    break;
+
+                case 'sound':
+                    keyElement.innerHTML = createIconHTML('volume_up');
+                    keyElement.addEventListener('click', (e) => {
+                        this.properties.sound = !this.properties.sound;
+                        if (this.properties.sound) {
+                            e.target.innerHTML = `<i class="material-icons">volume_up</i>`;
+                        } else {
+                            e.target.innerHTML = `<i class="material-icons">volume_off</i>`;
+                        }
+                    });
 
                     break;
 
