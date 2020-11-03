@@ -33,6 +33,7 @@ const Keyboard = {
         capsLock: false,
         lang: 'en',
         sound: true,
+        voice: true,
     },
 
     init() {
@@ -58,6 +59,7 @@ const Keyboard = {
         });
     },
 
+
     createKeys() {
         const fragment = document.createDocumentFragment();
         const keyEn = [
@@ -65,7 +67,7 @@ const Keyboard = {
             'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', 'done',
             'caps Lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'enter',
             'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '↑', 'sound',
-            'en','space', '←', '↓', '→',
+            'voice','en','space', '←', '↓', '→',
         ];
 
         const KeyEnShift = [
@@ -73,7 +75,7 @@ const Keyboard = {
             'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}','done',
             'caps Lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ':', "'", 'enter',
             'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?', '↑','sound',
-            'en','space', '←', '↓', '→',
+            'voice','en','space', '←', '↓', '→',
         ];
 
         const keyRu = [
@@ -81,14 +83,14 @@ const Keyboard = {
             'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ','done',
             'caps Lock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'enter',
             'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '↑','sound',
-            'ru','space', '←', '↓', '→',
+            'voice','ru','space', '←', '↓', '→',
         ];
         const keyRuShift = [
             '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '+', 'backspace',
             'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ','ru','done',
             'caps Lock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'enter',
             'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', ',', '↑','sound',
-            'ru','space', '←', '↓', '→',
+            'voice','ru','space', '←', '↓', '→',
         ];
 
         let layout = [];
@@ -124,6 +126,8 @@ const Keyboard = {
                     audio.play();
                 }
             });
+
+
 
             switch (key) {
                 case 'backspace':
@@ -213,6 +217,21 @@ const Keyboard = {
 
                     break;
 
+                case 'voice':
+                    keyElement.innerHTML = createIconHTML('mic');
+                    keyElement.addEventListener('click', (e) => {
+                        this.properties.voice = !this.properties.voice;
+                            if (this.properties.voice) {
+                                recognition.start();
+                                e.target.innerHTML = `<i class="material-icons">mic</i>`;
+                            } else {
+                                e.target.innerHTML = `<i class="material-icons">mic_off</i>`;
+                                recognition.stop();
+                            }
+                        });
+
+                    break;
+
                 case '←':
                     keyElement.innerHTML = '←';
                     keyElement.addEventListener('click', () => {
@@ -288,7 +307,6 @@ const Keyboard = {
 
                 default:
                     keyElement.textContent = key.toLowerCase();
-
                     keyElement.addEventListener('click', () => {
                         this.properties.value += this.properties.capsLock ? key.toUpperCase() : key.toLowerCase();
                         this.triggerEvent('oninput');
@@ -393,8 +411,39 @@ const Keyboard = {
         pos = pos - prevLine;
         textareaInput.selectionStart = textareaInput.selectionEnd = nextLine + pos;
     },
+
 };
 
 window.addEventListener('DOMContentLoaded', function () {
     Keyboard.init();
 });
+
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const recognition = new SpeechRecognition();
+recognition.interimResults = true;
+
+recognition.addEventListener('result', e => {
+    if (Keyboard.properties.lang === 'en') {
+        recognition.lang = 'en-US';
+    } else {
+        recognition.lang = 'ru-Ru';
+    }
+    const transcript = Array.from(e.results)
+        .map(result => result[0])
+        .map(result => result.transcript)
+        .join('');
+        if (e.results[0].isFinal) {
+        textareaInput.value += transcript;
+    }
+});
+
+
+recognition.addEventListener('end', () => {
+    if (Keyboard.properties.voice) {
+        recognition.start();
+    } else {
+        recognition.stop();
+    }
+});
+recognition.start();
