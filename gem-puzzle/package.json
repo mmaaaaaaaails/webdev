@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js",
     "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix"
+    "lint:fix": "eslint ./src --fix",
+    "deploy": "npm run build && netlify deploy --prod"
   },
   "browserslist": [
     "> 1%",
