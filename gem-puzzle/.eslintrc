@@ -1,7 +1,10 @@
 {
     "extends": ["airbnb/base"],
     "rules": {
-        "no-console": 0
+        "no-console": 0,
+        "indent": [2, 4],
+        "linebreak-style": 0,
+        "quotes": [2, "single"]
     },
     "globals": {
         "window": true,
