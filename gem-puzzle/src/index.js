@@ -10,5 +10,5 @@ document.body.append(wrapper);
 const gemPuzzle = new GemPuzzle(
     document.querySelector('#wrapper'),
     './assets/img/enemy.jpg',
-    600,
+    400,
 );
