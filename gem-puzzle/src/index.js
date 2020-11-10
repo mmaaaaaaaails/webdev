@@ -3,12 +3,12 @@ import './assets/css/main.css';
 import './assets/scss/main.scss';
 import GemPuzzle from './js/common';
 
-const wrapper = document.createElement('div');
-wrapper.id = 'wrapper';
-document.body.append(wrapper);
+const puzzles = document.createElement('section');
+puzzles.id = 'puzzles';
+document.body.append(puzzles);
 
 const gemPuzzle = new GemPuzzle(
-    document.querySelector('#wrapper'),
+    document.querySelector('#puzzles'),
     './assets/img/enemy.jpg',
     400,
 );
