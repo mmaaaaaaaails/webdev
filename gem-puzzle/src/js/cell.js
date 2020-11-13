@@ -3,9 +3,7 @@ export default class Cell {
         this.isEmpty = false;
         this.index = index;
         this.puzzle = puzzle;
-
         this.sound = true;
-
         this.width = this.puzzle.width / this.puzzle.gameField;
         this.height = this.puzzle.height / this.puzzle.gameField;
         this.el = this.createDiv();
@@ -17,14 +15,13 @@ export default class Cell {
         }
 
         this.setImage();
+        // this.setPosition(this.index);
     }
 
     createDiv() {
         const fragment = document.createElement('div');
         fragment.className = 'fragment';
         fragment.style.backgroundSize = `${this.puzzle.width}px ${this.puzzle.height}px`;
-        fragment.style.width = `${this.width}px`;
-        fragment.style.height = `${this.height}px`;
 
         fragment.onclick = () => {
             if (this.sound) {
@@ -38,7 +35,11 @@ export default class Cell {
             const { x: emptyX, y: emptyY } = this.getXy(emptyCellIndex);
             if ((x === emptyX || y === emptyY) && (
                 Math.abs(x - emptyX) === 1 || Math.abs(y - emptyY) === 1)) {
-                this.puzzle.swapCells(currentCellIndex, emptyCellIndex);
+                this.puzzle.numberOfMovements += 1;
+                if (this.puzzle.onSwap && typeof this.puzzle.onSwap === 'function') {
+                    this.puzzle.onSwap(this.puzzle.numberOfMovements);
+                }
+                this.puzzle.swapCells(currentCellIndex, emptyCellIndex, true);
             }
         };
 
@@ -49,6 +50,10 @@ export default class Cell {
         const { x, y } = this.getXy(this.index);
         const left = this.width * x;
         const top = this.height * y;
+
+        this.el.style.width = `${this.width}px`;
+        this.el.style.height = `${this.height}px`;
+
         this.el.style.backgroundImage = `url(${this.puzzle.imgSrc})`;
         this.el.style.backgroundPosition = `-${left}px -${top}px`;
     }

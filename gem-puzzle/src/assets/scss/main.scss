@@ -6,12 +6,42 @@
 
 .container {
     position: relative;
-    margin: 30px auto 0;
+    margin: 20px auto 0;
 }
 
 .fragment {
-    border: 1px solid #FFF;
     position: absolute;
     box-sizing: border-box;
     cursor: pointer;
+    transition: all .5s ease-in;
+}
+
+.header {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+
+  &__move {
+    color: #160b03;
+  }
+
+  &__button {
+    line-height: 130%;
+    letter-spacing: 1px;
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+    outline: 0;
+    border: 2px solid #F1CDB3;
+    cursor: pointer;
+    background: #F1CDB3 linear-gradient(to left, transparent, transparent 50%, #fff 50%);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+
+    &:hover {
+      color: #F1CDB3;
+      transition: all 0.5s ease-in;
+      background-position: 0 0;
+    }
+  }
 }
