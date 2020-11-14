@@ -1,12 +1,22 @@
-*{
+* {
     margin: 0;
     padding:0;
     font-family: 'Lato', sans-serif;
 }
 
+body {
+  background: #24211b;
+}
+
 .container {
     position: relative;
-    margin: 20px auto 0;
+    margin: 7px auto 0;
+    border: 1px solid black;
+    background-image: radial-gradient(rgb(231, 245, 232), rgb(231, 244, 233), rgb(232, 244, 235), rgb(232, 243, 236),
+    rgb(233, 243, 238), rgb(233, 242, 239), rgb(200, 238, 234), rgb(167, 233, 228), rgb(134, 229, 223),
+    rgb(101, 225, 218), rgb(68, 220, 212), rgb(35, 216, 207));
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .fragment {
@@ -17,12 +27,15 @@
 }
 
 .header {
-  margin-top: 30px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 400px;
+  min-height: 75px;
+  margin: auto;
 
   &__move {
-    color: #160b03;
+    color: #39dbd2;
     margin-right: 100px;
   }
 
@@ -33,20 +46,19 @@
     height: 20px;
     border-radius: 5px;
     outline: 0;
-    border: 2px solid #F1CDB3;
+    border: 2px solid#39dbd2;
     cursor: pointer;
-    background: #F1CDB3 linear-gradient(to left, transparent, transparent 50%, #fff 50%);
+    background: #39dbd2 linear-gradient(to left, transparent, transparent 50%, #fff 50%);
     background-position: 100% 0;
     background-size: 200% 100%;
 
     &:hover {
-      color: #F1CDB3;
+      color: #39dbd2;
       transition: all 0.5s ease-in;
       background-position: 0 0;
     }
   }
 }
-
 
 .modal {
   width: 100%;
@@ -75,9 +87,12 @@
     position: relative;
     top: 50%;
     left: 50%;
-    background: #fff;
+    background-image: linear-gradient(to top right, rgb(255, 161, 99), rgb(245, 167, 100), rgb(236, 173, 102), rgb(226, 180, 103),
+    rgb(217, 186, 105), rgb(207, 192, 106), rgb(178, 196, 123), rgb(150, 200, 140), rgb(121, 204, 157), rgb(92, 208, 173),
+    rgb(64, 212, 190), rgb(35, 216, 207));
     opacity: 0;
     transition: all 0.5s ease-in-out;
+    border-radius: 7px;
   }
 
   &__hide {
@@ -87,9 +102,10 @@
   &__close {
     font-size: 28px;
     display: block;
-    float: right;
     color: #fff;
     cursor: pointer;
+    position: absolute;
+    right: 10px;
 
     &:hover {
       color: red;
@@ -98,10 +114,13 @@
   }
 
   &__info {
-    text-align: center;
     color: white;
-    background-color: #42bc83;
-    font-size: 16px;
+    font-size: 18px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
   }
 
   &__open &__content {
@@ -110,4 +129,9 @@
     opacity: 1;
   }
 
+  &__numbersMove {
+    color: #184043;
+    padding: 0 7px;
+    font-weight: bold;
+  }
 }
