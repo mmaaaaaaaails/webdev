@@ -10,7 +10,7 @@ export default class GemPuzzle {
         this.shuffling = false;
         this.numberOfMovements = 0;
 
-        // this.onFinished = () => {};
+        this.onFinished = () => {};
         this.onSwap = () => {};
 
         this.init();
@@ -53,19 +53,24 @@ export default class GemPuzzle {
     }
 
     swapCells(i, j) {
-        this.cells[i].setPosition(j, i);
-        this.cells[j].setPosition(i);
         [this.cells[i], this.cells[j]] = [this.cells[j], this.cells[i]];
+        this.cells[i].setPosition(i);
+        this.cells[j].setPosition(j);
+        if (!this.shuffling && this.isAssembled()) {
+            if (this.onFinished && typeof this.onFinished === 'function') {
+                this.onFinished(this.numberOfMovements);
+            }
+        }
     }
 
     isAssembled() {
-        for (let i = 0; i < this.gameField * this.gameField; i += 1) {
+        for (let i = 0; i < this.cells.length; i += 1) {
             if (i !== this.cells[i].index) {
                 if (i === 6 && this.cells[i].index === 8 && this.cells[i + 1].index === i + 1) {
                     return true;
                 }
+                return false;
             }
-            return false;
         }
         return true;
     }

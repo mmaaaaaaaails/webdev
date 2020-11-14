@@ -15,7 +15,7 @@ export default class Cell {
         }
 
         this.setImage();
-        // this.setPosition(this.index);
+        this.setPosition(this.index);
     }
 
     createDiv() {
