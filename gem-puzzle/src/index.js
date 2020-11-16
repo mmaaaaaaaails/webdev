@@ -29,7 +29,7 @@ const gemPuzzle = new GemPuzzle(
     document.querySelector('#puzzles'),
     './assets/img/woman.jpg',
     400,
-    2,
+    4,
 );
 
 function getTime() {
@@ -88,3 +88,18 @@ gemPuzzle.onFinished = (movements) => {
         getTime(clearInterval());
     });
 };
+
+const footer = document.createElement('footer');
+footer.className = 'footer';
+document.body.append(footer);
+
+const button = document.createElement('button');
+button.className = 'footer__button';
+footer.append(button);
+
+const fullImage = document.createElement('a');
+fullImage.href = './assets/img/woman.jpg';
+fullImage.innerHTML = 'Full Image';
+fullImage.target = '_blank';
+fullImage.className = 'footer__link';
+button.append(fullImage);

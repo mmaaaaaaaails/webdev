@@ -138,3 +138,35 @@ body {
     font-weight: bold;
   }
 }
+
+.footer {
+
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  &__button {
+    line-height: 130%;
+    letter-spacing: 1px;
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+    outline: 0;
+    border: 2px solid#39dbd2;
+    cursor: pointer;
+    background: #39dbd2 linear-gradient(to left, transparent, transparent 50%, #fff 50%);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+
+    &:hover {
+      color: #39dbd2;
+      transition: all 0.5s ease-in;
+      background-position: 0 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: black;
+  }
+}
