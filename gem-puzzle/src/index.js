@@ -11,6 +11,16 @@ move.innerHTML = 'moves: 0';
 move.className = 'header__move';
 header.append(move);
 
+const time = document.createElement('time');
+time.innerHTML = '00:00:00';
+time.className = 'header__time';
+header.append(time);
+
+const newGame = document.createElement('button');
+newGame.className = 'header__button';
+newGame.innerHTML = 'New game';
+header.append(newGame);
+
 const puzzles = document.createElement('section');
 puzzles.id = 'puzzles';
 document.body.append(puzzles);
@@ -19,19 +29,25 @@ const gemPuzzle = new GemPuzzle(
     document.querySelector('#puzzles'),
     './assets/img/woman.jpg',
     400,
-    4,
+    2,
 );
 
-const newGame = document.createElement('button');
-newGame.className = 'header__button';
-newGame.innerHTML = 'New game';
-header.append(newGame);
+function getTime() {
+    const period = document.querySelector('.header__time');
+    period.started = new Date();
+    period.update = (ms) => {
+        period.innerHTML = new Date(ms).toISOString().split(/T|\./)[1];
+    };
+    setInterval(() => period.update(new Date() - period.started), 500);
+}
+getTime();
 
 const bntGame = document.querySelector('.header__button');
 bntGame.addEventListener('click', () => {
     gemPuzzle.shuffle();
     move.innerHTML = 'moves: 0';
     gemPuzzle.numberOfMovements = 0;
+    getTime(clearInterval());
 });
 
 gemPuzzle.onSwap = (movements) => {
@@ -61,12 +77,14 @@ const modalInfo = document.querySelector('.modal__info');
 modal.style.display = 'block';
 
 gemPuzzle.onFinished = (movements) => {
-    modalInfo.innerHTML = `Hooray! You solved this puzzle in <span class="modal__numbersMove">${movements}</span> moves.`;
+    modalInfo.innerHTML = `Hooray! You solved this puzzle in <span class="modal__numbersMove">${movements}</span> moves`;
     modal.classList.add('modal__open');
+    getTime(clearInterval());
     modalClose.addEventListener('click', () => {
         modal.classList.remove('modal__open');
         gemPuzzle.shuffle();
         move.innerHTML = 'moves: 0';
         gemPuzzle.numberOfMovements = 0;
+        getTime(clearInterval());
     });
 };

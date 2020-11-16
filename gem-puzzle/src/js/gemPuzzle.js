@@ -14,6 +14,7 @@ export default class GemPuzzle {
         this.onSwap = () => {};
 
         this.init();
+
         const img = new Image();
         img.onload = () => {
             this.height = (img.height * this.width) / img.width;
