@@ -77,7 +77,7 @@ const modalInfo = document.querySelector('.modal__info');
 modal.style.display = 'block';
 
 gemPuzzle.onFinished = (movements) => {
-    modalInfo.innerHTML = `Hooray! You solved this puzzle in <span class="modal__numbersMove">${movements}</span> moves`;
+    modalInfo.innerHTML = `Hooray! You solved this puzzle in <span class="modal__numbers-move">${movements}</span> moves`;
     modal.classList.add('modal__open');
     getTime(clearInterval());
     modalClose.addEventListener('click', () => {

@@ -1,3 +1,5 @@
+@import 'colors';
+
 * {
     margin: 0;
     padding:0;
@@ -5,7 +7,7 @@
 }
 
 body {
-  background: #24211b;
+  background: $color-dark;
 }
 
 .container {
@@ -35,11 +37,11 @@ body {
   margin: auto;
 
   &__move {
-    color: #39dbd2;
+    color: $color-main;
   }
 
   &__time {
-    color: #39dbd2;
+    color: $color-main;
   }
 
   &__button {
@@ -49,14 +51,14 @@ body {
     height: 20px;
     border-radius: 5px;
     outline: 0;
-    border: 2px solid#39dbd2;
+    border: 2px solid $color-main;
     cursor: pointer;
-    background: #39dbd2 linear-gradient(to left, transparent, transparent 50%, #fff 50%);
+    background: $color-main linear-gradient(to left, transparent, transparent 50%, $color-dark 50%);
     background-position: 100% 0;
     background-size: 200% 100%;
 
     &:hover {
-      color: #39dbd2;
+      color: $color-main;
       transition: all 0.5s ease-in;
       background-position: 0 0;
     }
@@ -105,19 +107,19 @@ body {
   &__close {
     font-size: 28px;
     display: block;
-    color: #fff;
+    color: $color-modal;
     cursor: pointer;
     position: absolute;
     right: 10px;
 
     &:hover {
-      color: red;
+      color: $color-dark;
       transition: all .5s;
     }
   }
 
   &__info {
-    color: white;
+    color: $color-modal;
     font-size: 18px;
     height: 100px;
     display: flex;
@@ -132,15 +134,14 @@ body {
     opacity: 1;
   }
 
-  &__numbersMove {
-    color: #184043;
+  &__numbers-move {
+    color: $color-dark;
     padding: 0 7px;
     font-weight: bold;
   }
 }
 
 .footer {
-
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -152,14 +153,14 @@ body {
     height: 20px;
     border-radius: 5px;
     outline: 0;
-    border: 2px solid#39dbd2;
+    border: 2px solid $color-main;
     cursor: pointer;
-    background: #39dbd2 linear-gradient(to left, transparent, transparent 50%, #fff 50%);
+    background: $color-main linear-gradient(to left, transparent, transparent 50%, $color-dark 50%);
     background-position: 100% 0;
     background-size: 200% 100%;
 
     &:hover {
-      color: #39dbd2;
+      color: $color-main;
       transition: all 0.5s ease-in;
       background-position: 0 0;
     }
@@ -167,6 +168,10 @@ body {
 
   &__link {
     text-decoration: none;
-    color: black;
+    color: $color-dark;
+
+    &:hover {
+      color: $color-main;
+    }
   }
 }
