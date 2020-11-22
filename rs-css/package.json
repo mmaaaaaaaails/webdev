@@ -8,7 +8,8 @@
     "build": "webpack --config ./build/webpack.build.conf.js",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "lint:watch": "eslint ./src -watch"
+    "lint:watch": "eslint ./src -watch",
+    "deploy": "npm run build && netlify deploy --prod"
   },
   "browserslist": [
     "> 1%",
