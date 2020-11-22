@@ -6,8 +6,8 @@ export default class Cell {
         this.sound = true;
         this.width = this.puzzle.width / this.puzzle.gameField;
         this.height = this.puzzle.height / this.puzzle.gameField;
-        this.el = this.createDiv();
-        puzzle.el.append(this.el);
+        this.element = this.createDiv();
+        puzzle.element.append(this.element);
 
         if (this.index === this.puzzle.gameField * this.puzzle.gameField - 1) {
             this.isEmpty = true;
@@ -51,17 +51,17 @@ export default class Cell {
         const left = this.width * x;
         const top = this.height * y;
 
-        this.el.style.width = `${this.width}px`;
-        this.el.style.height = `${this.height}px`;
+        this.element.style.width = `${this.width}px`;
+        this.element.style.height = `${this.height}px`;
 
-        this.el.style.backgroundImage = `url(${this.puzzle.imgSrc})`;
-        this.el.style.backgroundPosition = `-${left}px -${top}px`;
+        this.element.style.backgroundImage = `url(${this.puzzle.imageSource})`;
+        this.element.style.backgroundPosition = `-${left}px -${top}px`;
     }
 
     setPosition(index) {
         const { left, top } = this.getPositionFromIndex(index);
-        this.el.style.left = `${left}px`;
-        this.el.style.top = `${top}px`;
+        this.element.style.left = `${left}px`;
+        this.element.style.top = `${top}px`;
     }
 
     getPositionFromIndex(index) {

@@ -1,9 +1,11 @@
 import Cell from './cell';
 
 export default class GemPuzzle {
-    constructor(el, imgSrc, width, gameField) {
-        this.parentEl = el;
-        this.imgSrc = imgSrc;
+    constructor({
+        element, imageSource, width, gameField,
+    }) {
+        this.parentEl = element;
+        this.imageSource = imageSource;
         this.width = width;
         this.gameField = gameField;
         this.cells = [];
@@ -18,17 +20,17 @@ export default class GemPuzzle {
         const img = new Image();
         img.onload = () => {
             this.height = (img.height * this.width) / img.width;
-            this.el.style.width = `${this.width}px`;
-            this.el.style.height = `${this.height}px`;
+            this.element.style.width = `${this.width}px`;
+            this.element.style.height = `${this.height}px`;
 
             this.setup();
         };
-        img.src = this.imgSrc;
+        img.src = this.imageSource;
     }
 
     init() {
-        this.el = this.createWrapper();
-        this.parentEl.append(this.el);
+        this.element = this.createWrapper();
+        this.parentEl.append(this.element);
     }
 
     createWrapper() {
