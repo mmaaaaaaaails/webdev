@@ -8,14 +8,16 @@ export default class Cell {
         this.height = this.puzzle.height / this.puzzle.gameField;
         this.element = this.createDiv();
         puzzle.element.append(this.element);
+        this.createGameField();
+    }
 
+    createGameField() {
         if (this.index === this.puzzle.gameField * this.puzzle.gameField - 1) {
             this.isEmpty = true;
-            return;
+        } else {
+            this.setImage();
+            this.setPosition(this.index);
         }
-
-        this.setImage();
-        this.setPosition(this.index);
     }
 
     createDiv() {
