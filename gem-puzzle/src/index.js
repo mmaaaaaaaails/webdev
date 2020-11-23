@@ -20,7 +20,7 @@ const gemPuzzle = new GemPuzzle({
     element: puzzles,
     imageSource: './assets/img/woman.jpg',
     width: 400,
-    gameField: 2,
+    gameField: 4,
 });
 
 function createElementTime() {

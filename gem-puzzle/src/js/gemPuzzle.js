@@ -67,9 +67,12 @@ export default class GemPuzzle {
     }
 
     isAssembled() {
+        const positionFragmentSix = 6;
+        const positionFragmentEight = 8;
         for (let i = 0; i < this.cells.length; i += 1) {
             if (i !== this.cells[i].index) {
-                if (i === 6 && this.cells[i].index === 8 && this.cells[i + 1].index === i + 1) {
+                if (i === positionFragmentSix && this.cells[i].index === positionFragmentEight
+                    && this.cells[i + 1].index === i + 1) {
                     return true;
                 }
                 return false;
