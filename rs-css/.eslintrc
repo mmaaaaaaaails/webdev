@@ -4,5 +4,9 @@
         "indent": [2, 4],
         "linebreak-style": 0,
         "quotes": [2, "single"]
+    },
+
+    "globals": {
+        "document": true
     }
 }

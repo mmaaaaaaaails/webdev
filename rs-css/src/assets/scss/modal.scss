@@ -1,0 +1,91 @@
+@import './colors.scss';
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(19, 19, 19, 0.51);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+
+    &__open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__show {
+        display: block;
+    }
+
+    &__content {
+        width: 600px;
+        margin: 50% 0 0 -200px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        border-radius: 7px;
+    }
+
+    &__hide {
+        display: none;
+    }
+
+    &__close {
+        font-size: 28px;
+        display: block;
+        color: #777;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+
+        &:hover {
+            color: $dark-color;
+            transition: all .5s;
+        }
+    }
+
+    &__open &__content {
+        display: block;
+        margin-top: -200px;
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+.info {
+    color: $dark-color;
+    font-size: 18px;
+    border-radius: 7px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+    background-image: linear-gradient(to bottom left, rgb(216, 218, 230), rgb(202, 210, 224), rgb(188, 203, 219),
+    rgb(174, 195, 213), rgb(160, 187, 207), rgb(146, 179, 202), rgb(132, 172, 196), rgb(118, 164, 191),
+    rgb(104, 156, 185), rgb(90, 148, 179), rgb(76, 141, 174), rgb(62, 133, 168));
+
+    &__title {
+        font-size: 22px;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+    }
+
+    &__description {
+        font-size: 14px;
+    }
+
+    &__example {
+        background: honeydew;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
