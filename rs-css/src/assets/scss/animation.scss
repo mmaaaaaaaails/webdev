@@ -3,3 +3,8 @@
     50%  { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
+
+@keyframes blinker {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+}
