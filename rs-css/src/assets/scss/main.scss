@@ -17,7 +17,7 @@ body {
 .wrapper {
     margin: 0 auto;
     padding: 0 20px;
-    max-width: 1020px;
+    max-width: 1200px;
 }
 
 .header {
@@ -41,6 +41,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
 
     &__title {
         color: $main-color;
@@ -75,7 +76,7 @@ body {
     &__table {
         width: 300px;
         height: 140px;
-        background-color: #88472f;
+        background-color: $highlighter-color;
         margin: 0 auto;
         box-shadow: 0px 40px 10px rgba(0,0,0,.2);
         display: flex;
@@ -95,6 +96,11 @@ body {
         animation-duration: 2s;
         animation-iteration-count: infinite;
         transform-origin: bottom;
+
+        &--move {
+            animation-name: move;
+            animation-timing-function: ease;
+        }
     }
 
     &__edge {
@@ -120,27 +126,23 @@ body {
     }
 }
 
-.move {
-    animation-name: move;
-    animation-timing-function: ease;
-}
-
 .redactor {
-    width: 90%;
+    width: 70%;
     min-height: 360px;
     display: flex;
     justify-content: space-evenly;
     margin-top: 15px;
     border: solid 10px rgba(0,0,0,.35);
     border-radius: 5px;
+    margin-bottom: 10px;
 
     &__css {
-        width: 45%;
+        width: 43%;
 
     }
 
     &__html {
-        width: 45%;
+        width: 43%;
     }
 
     &__title {
@@ -191,8 +193,119 @@ body {
             animation: none;
         }
     }
+
+    &__tag {
+        padding-left: 30px;
+    }
 }
 
-.tag {
-    padding-left: 30px;
+.level {
+    position: fixed;
+    width: 300px;
+    right: 0;;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.35);
+    z-index: 1;
+
+    &__container {
+        padding: 15px;
+        height: 100%;
+    }
+
+    &__order {
+        color: $main-color;
+    }
+
+    &__check {
+        display: inline-block;
+        width: 10px;
+        height: 16px;
+        border: 1px solid $cloudy-color;
+        border-width: 0 3px 3px 0;
+        transform: rotate( 45deg);
+        margin-left: 10px;
+        margin-right: 75px;
+    }
+
+    &__line {
+        display: inline-block;
+        height: 14px;
+        width: 14px;
+        border: solid 1px $cloudy-color;
+        border-width: 3px 3px 0 0;
+        transform: rotate(-135deg);
+        cursor: pointer;
+        box-sizing: border-box;
+
+        &--right {
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top: 11px;
+    right: 10px;
+
+    &__line-one, &__line-two, &__line-three {
+        width: 35px;
+        height: 3px;
+        background-color: $cloudy-color;
+        transition: 0.4s;
+        margin-bottom: 6px;
+    }
+
+    .change &__line-one  {
+        transform: rotate(-45deg) translate(-8px, 7px) ;
+    }
+
+    .change &__line-two {
+        opacity: 0;
+    }
+
+    .change &__line-three {
+        transform: rotate(45deg) translate(-5px, -5px) ;
+    }
+}
+
+.information {
+
+    margin-top: 20px;
+    line-height: 160%;
+
+    &__title {
+        color: $main-color;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__subtitle {
+        color: $cloudy-color;
+        margin-bottom: 10px;
+    }
+
+    &__symbol {
+        color: $main-color;
+        margin-bottom: 10px;
+        background: $highlighter-color;
+        display: inline-block;
+        padding: 5px 8px;
+    }
+
+    &__description {
+        color:  $cloudy-color;
+        margin-bottom: 10px;
+    }
+
+    &__tag {
+        background: $highlighter-color;
+        padding: 2px 2px;
+    }
 }
