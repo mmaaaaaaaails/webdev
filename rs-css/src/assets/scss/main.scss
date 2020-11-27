@@ -1,6 +1,7 @@
 @import './modal.scss';
 @import './animation.scss';
 @import './colors.scss';
+@import './hamburger.scss';
 
 
 * {
@@ -138,7 +139,6 @@ body {
 
     &__css {
         width: 43%;
-
     }
 
     &__html {
@@ -153,6 +153,10 @@ body {
 
     &__name {
         color: $main-color;
+    }
+
+    &__file {
+        color: $cloudy-color;
     }
 
     &__window {
@@ -217,17 +221,6 @@ body {
         color: $main-color;
     }
 
-    &__check {
-        display: inline-block;
-        width: 10px;
-        height: 16px;
-        border: 1px solid $cloudy-color;
-        border-width: 0 3px 3px 0;
-        transform: rotate( 45deg);
-        margin-left: 10px;
-        margin-right: 75px;
-    }
-
     &__line {
         display: inline-block;
         height: 14px;
@@ -237,41 +230,13 @@ body {
         transform: rotate(-135deg);
         cursor: pointer;
         box-sizing: border-box;
+        margin-left: 75px;
 
         &--right {
             transform: rotate(45deg);
             cursor: pointer;
+            margin-left: 0px;
         }
-    }
-}
-
-
-
-.hamburger {
-    display: inline-block;
-    cursor: pointer;
-    position: absolute;
-    top: 11px;
-    right: 10px;
-
-    &__line-one, &__line-two, &__line-three {
-        width: 35px;
-        height: 3px;
-        background-color: $cloudy-color;
-        transition: 0.4s;
-        margin-bottom: 6px;
-    }
-
-    .change &__line-one  {
-        transform: rotate(-45deg) translate(-8px, 7px) ;
-    }
-
-    .change &__line-two {
-        opacity: 0;
-    }
-
-    .change &__line-three {
-        transform: rotate(45deg) translate(-5px, -5px) ;
     }
 }
 
@@ -308,4 +273,14 @@ body {
         background: $highlighter-color;
         padding: 2px 2px;
     }
+}
+
+.check {
+    display: inline-block;
+    width: 10px;
+    height: 16px;
+    border: 1px solid $cloudy-color;
+    border-width: 0 3px 3px 0;
+    transform: rotate( 45deg);
+    margin-left: 10px;
 }
