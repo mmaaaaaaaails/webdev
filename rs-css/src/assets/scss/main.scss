@@ -102,6 +102,10 @@ body {
             animation-name: move;
             animation-timing-function: ease;
         }
+
+        &--well {
+            visibility: hidden;
+        }
     }
 
     &__edge {
@@ -136,6 +140,10 @@ body {
     border: solid 10px rgba(0,0,0,.35);
     border-radius: 5px;
     margin-bottom: 10px;
+
+    &__move {
+        animation: tremor .1s 1;
+    }
 
     &__css {
         width: 43%;
@@ -214,6 +222,13 @@ body {
             box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
             transform: translateY(3px);
             transition: all 0.1s ease-in-out;
+        }
+
+        &--active {
+            transform: translateY(3px);
+            transition: all 0.1s ease-in-out;
+            background-color: $highlighter-color;
+            color: $light-color;
         }
     }
 
