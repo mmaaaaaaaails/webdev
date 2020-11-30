@@ -35,13 +35,6 @@ module.exports = {
                 name: '[name].[ext]',
             },
         }, {
-            test: /(wav)$/,
-            loader: 'file-loader',
-            options: {
-                outputPath: 'audio',
-                name: '[name].[ext]',
-            },
-        }, {
             test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'file-loader',
             options: {
@@ -97,7 +90,6 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
             { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-            { from: `${PATHS.src}/${PATHS.assets}audio`, to: `${PATHS.assets}audio` },
             { from: `${PATHS.src}/static`, to: '' },
         ]),
         new HtmlWebpackPlugin({
