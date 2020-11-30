@@ -191,10 +191,29 @@ body {
         color: $dark-color;
         font-weight: bold;
 
-
         &:focus {
             color: $dark-color;
             animation: none;
+        }
+    }
+
+    &__button {
+        font-size: 12px;
+        width: 46px;
+        height: 16px;
+        text-align: center;
+        margin-left: 60px;
+        border-radius: 10px;
+        box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
+        outline: 0;
+        border: none;
+        cursor: pointer;
+        color: $dark-color;
+
+        &:hover {
+            box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+            transform: translateY(3px);
+            transition: all 0.1s ease-in-out;
         }
     }
 
