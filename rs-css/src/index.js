@@ -2,6 +2,8 @@ import './js/modal';
 import './js/hamburger';
 import './assets/css/main.css';
 import './assets/scss/main.scss';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
 
 const enter = document.querySelector('.redactor__button');
 const input = document.querySelector('.redactor__input');
@@ -51,3 +53,4 @@ function keyUpHandler() {
 clickHandler();
 keyDownHandler();
 keyUpHandler();
+hljs.initHighlightingOnLoad();

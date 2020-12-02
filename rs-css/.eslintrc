@@ -3,7 +3,8 @@
     "rules": {
         "indent": [2, 4],
         "linebreak-style": 0,
-        "quotes": [2, "single"]
+        "quotes": [2, "single"],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
     },
 
     "globals": {
