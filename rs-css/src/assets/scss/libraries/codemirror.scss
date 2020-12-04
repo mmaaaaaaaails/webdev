@@ -1,0 +1,28 @@
+.CodeMirror {
+    height: 22px !important;
+    max-width: 290px !important;
+    background-color: inherit !important;
+    display: block !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+}
+
+div.CodeMirror-vscrollbar {
+    display: none !important;
+    overflow-y: hidden !important;
+}
+
+.CodeMirror-hscrollbar {
+    display: none !important;
+    overflow-x: hidden !important;
+}
+
+.CodeMirror-scroll {
+    overflow: hidden !important;
+    max-height: 10px !important;
+}
+
+.CodeMirror-scrollbar-filler {
+    height: 0 !important;
+    width: 0 !important;
+}

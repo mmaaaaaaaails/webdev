@@ -2,11 +2,10 @@ import './js/modal';
 import './js/hamburger';
 import './assets/css/main.css';
 import './assets/scss/main.scss';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
+import './js/libraries/highlightLib';
+import textarea from './js/libraries/codemirrorLib';
 
 const enter = document.querySelector('.redactor__button');
-const input = document.querySelector('.redactor__input');
 const laptop = document.querySelectorAll('.table__laptop');
 const redactor = document.querySelector('.redactor');
 
@@ -23,7 +22,7 @@ function startAnimation() {
 
 function clickHandler() {
     enter.addEventListener('click', () => {
-        if (input.value === 'laptop') {
+        if (textarea.getValue() === 'laptop') {
             sortElements();
         } else {
             startAnimation();
@@ -33,7 +32,7 @@ function clickHandler() {
 
 function keyDownHandler() {
     document.addEventListener('keydown', (element) => {
-        if (input.value === 'laptop' && element.code === 'Enter') {
+        if (textarea.getValue() === 'laptop' && element.code === 'Enter') {
             enter.classList.add('redactor__button--active');
             sortElements();
         } else if (element.code === 'Enter') {
@@ -53,4 +52,3 @@ function keyUpHandler() {
 clickHandler();
 keyDownHandler();
 keyUpHandler();
-hljs.initHighlightingOnLoad();
