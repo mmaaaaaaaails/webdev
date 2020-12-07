@@ -4,6 +4,23 @@ import './assets/css/main.css';
 import './assets/scss/main.scss';
 import './js/libraries/highlightLib';
 import textarea from './js/libraries/codemirrorLib';
+import data from './js/data';
+
+const information = document.querySelector('.information');
+data.find((el) => {
+    information.innerHTML = `
+    <div class='information'>
+        <span class="level__order">Level ${el.level} of 10</span>
+        <h3 class='information__title'>${el.title}</h3>
+        <p class='information__subtitle'>${el.subtitle}</p>
+        <p class='information__symbol'>${el.symbol}</p>
+        <p class='information__description'>${el.description}</p>
+        <h3 class='information__title'>Examples</h3>
+        <span class='information__description'>${el.tag}</span>
+    </div>
+    `;
+    return el.level === 1;
+});
 
 const enter = document.querySelector('.redactor__button');
 const laptop = document.querySelectorAll('.table__laptop');
