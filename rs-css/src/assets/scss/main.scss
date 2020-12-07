@@ -234,10 +234,35 @@ body {
 
     &__tag {
         padding-left: 30px;
+
+        &--hover {
+            opacity: 0.5;
+        }
     }
 
 
 }
+
+.tooltip {
+
+    &__window {
+        box-shadow: 2px 2px 3px $dark-color;
+        background-color: $main-color;
+        border: solid 1px $dark-color;
+        height: 24px;
+        width: 155px;
+        display: none;
+        position: absolute;
+        top: -20px;
+        padding-left: 5px;
+        padding-top: 2px;
+    }
+
+    &__visible {
+        display: block;
+    }
+}
+
 
 .level {
     position: fixed;

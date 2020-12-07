@@ -49,6 +49,25 @@ function keyUpHandler() {
     });
 }
 
+const tag = document.querySelector('.redactor__tag');
+const tooltip = document.getElementsByClassName('tooltip');
+function showTooltip() {
+    for (let i = 0; i < tooltip.length; i += 1) {
+        tooltip[i].addEventListener('mouseover', function () {
+            const tooltipWindow = this.getElementsByClassName('tooltip__window')[0];
+            tooltipWindow.classList.add('tooltip__visible');
+            tooltipWindow.innerHTML = '&lt;laptop&gt &lt;laptop /&gt';
+            tag.classList.add('redactor__tag--hover');
+        });
+        tooltip[i].addEventListener('mouseout', function () {
+            const tooltipWindow = this.getElementsByClassName('tooltip__window')[0];
+            tooltipWindow.classList.remove('tooltip__visible');
+            tag.classList.remove('redactor__tag--hover');
+        });
+    }
+}
+
 clickHandler();
 keyDownHandler();
 keyUpHandler();
+showTooltip();
