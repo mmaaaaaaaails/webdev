@@ -1,0 +1,27 @@
+.header {
+
+    padding-top: 10px;
+    width: 100%;
+    position: absolute;
+
+    &__block {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &__logo {
+      height: 50px;
+      width: 50px;
+      background-image: url(/assets/img/covid.svg);
+      background-size: cover;
+
+      &:hover {
+        @include animation;
+      }
+    }
+
+    &__title {
+      @include title;
+    }
+  }

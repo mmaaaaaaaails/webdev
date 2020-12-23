@@ -1,0 +1,53 @@
+.footer {
+    width: 100%;
+    position: absolute;
+    margin-top: -40px;
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__rss {
+        background-color: #1b5d93;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    &__author {
+        background-color: #19485e;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    &__info {
+        text-decoration: none;
+        color: $main-color;
+
+    &:hover {
+        color: $light-color;
+        transition: 0.5s linear;
+        }
+    }
+
+    &__icon {
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-image: url(/assets/img/github.svg);
+            background-size: cover;
+            width: 30px;
+            height: 30px;
+            top: -10px;
+            left: 15px;
+        }
+
+        &:hover::after {
+            @include animation;
+        }
+    }
+}

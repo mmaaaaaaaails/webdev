@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="header__block">
+                <div class="header__logo"></div>
+                <h1 class="header__title">COVID-19 Dashboard </h1>
+                <form class="search">
+                    <input class="search__input" type="text" placeholder="Search country" autocomplete="off" maxlength="40" autofocus>
+                    <div class="search__cross"></div>
+                    <div class="search__keyboard"></div>
+                    <button type="button" class="search__btn">
+                        <div class="search__icon"></div>
+                    </button>
+                </form>
+                <div class="hamburger">
+                    <div class="hamburger__line-one"></div>
+                    <div class="hamburger__line-two"></div>
+                    <div class="hamburger__line-three"></div>
+                </div>
+                <nav class="menu">
+                    <ul class="menu__lists">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link menu__link--active">JHU CSSE</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Mobile Version</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Modeling COVID-19</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Resource Center</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Donate</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="cases">
+            <div class="cases__block">
+                <span class="cases__block--full"></span>
+                <h3 class="cases__title">Global Cases</h3>
+                <p class="cases__number"></p>
+            </div>
+            <div class="cases__countries">
+                <span class="cases__full"></span>
+                <button class="cases__button" id="universal_cases">Cases</button>
+                <button class="death__button" id="universal_deaths">Death</button>
+                <button class="recovered__button" id="universal_recovered">Recovered</button>
+                <div class="cases__buttons">
+                    <button class="cases__button" id="total_cases">Total</button>
+                    <button class="cases__button" id="new_cases">for the last day</button>
+                    <button class="cases__button" id="relative_cases">per 100 000</button>
+                    <button class="cases__button" id="relative_new_cases">for the last day per 100 000</button>
+                </div>
+                <div class="cases__list"></div>
+            </div>
+        </section>
+        <section class="interactive">
+            <div class="map">
+                <div id="map" class="map"></div>
+            </div>
+            <div class="graph">
+                <span class="graph__full"></span>
+                <canvas id="chart" class="graph__chart" style="border-radius: 10px;"></canvas>
+            </div>
+        </section>
+        <section class="death">
+            <span class="death__full"></span>
+            <h3 class="death__title">Global Death</h3>
+            <p class="death__amount"></p>
+            <div class="death__buttons">
+                <button class="death__button" id="total_death">Total</button>
+                <button class="death__button" id="new_death">for the last day</button>
+                <button class="death__button" id="relative_death">per 100 000</button>
+                <button class="death__button" id="relative_new_death">for the last day per 100 000</button>
+            </div>
+            <div class="death__list"></div>
+        </section>
+        <section class="recovered">
+            <span class="recovered__full"></span>
+            <h3 class="recovered__title">Country</h3>
+            <p class="recovered__subtitle">Cases, recovered</p>
+            <div class="recovered__buttons">
+                <button class="recovered__button" id="total_recovered">Total</button>
+                <button class="recovered__button" id="new_recovered">for the last day</button>
+                <button class="recovered__button" id="relative_recovered">per 100 000</button>
+                <button class="recovered__button" id="relative_new_recovered">for the last day per 100 000</button>
+            </div>
+            <div class="recovered__list"></div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__block">
+                <div class="footer__rss">
+                    <a href="https://rs.school/js/" class="footer__info">RS School 2020q3</a>
+                    <span class="footer__icon"></span>
+                </div>
+                <div class="footer__author">
+                    <a href="https://github.com/ivan-scherbuk" class="footer__info">Ivan Scherbuk</a>
+                    <span class="footer__info">and</span>
+                    <a href="https://github.com/mmaaaaaaaails" class="footer__info">Vadim Dudko</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

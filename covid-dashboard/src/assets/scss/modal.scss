@@ -1,0 +1,39 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1003;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    &__content {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+        margin: auto;
+        animation: zoom 1s;
+    }
+
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+        transition: 0.3s;
+        z-index: 12;
+
+        &:hover {
+            color: red;
+            cursor: pointer;
+        }
+    }
+}
+
+.hide {
+    display: none;
+}

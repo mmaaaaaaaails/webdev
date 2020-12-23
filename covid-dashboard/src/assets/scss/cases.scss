@@ -1,0 +1,103 @@
+.cases {
+    margin-bottom: 10px;
+    height: 100%;
+
+    &__block {
+        width: 202px;
+        max-height: 70px;
+        background-color: $main-background;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        position: relative;
+
+        &--full {
+            @include fullScreen;
+        }
+    }
+
+    &__title {
+        @include title;
+        padding-bottom: 10px;
+
+        &--full {
+            color: $main-color;
+            text-align: center;
+            font-size: 40px;
+        }
+    }
+
+    &__number {
+        color: $cases-color;
+        @include number;
+
+        &--full {
+            font-size: 100px;
+            text-align: center;
+            font-weight: 600;
+            padding-top: 15px;
+            color: $cases-color;
+        }
+    }
+
+    &__map {
+        background-image: url(/assets/img/map.jpg);
+        background-size: cover;
+    }
+
+    &__buttons {
+        padding-top: 10px;
+    }
+
+    &__button {
+        background: $cases-color
+        linear-gradient(to left, transparent, transparent 50%, $light-color 50%);
+        @include button;
+
+        &:hover {
+            color: $cases-color;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding-left: 5px;
+        margin-top: 10px;
+    }
+
+    &__item {
+        margin-bottom: 4px;
+        border-bottom: 1px solid blueviolet;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: 0.5s linear;
+            cursor: pointer;
+            border-bottom: 1px solid $main-background;
+        }
+    }
+
+    &__countries {
+        width: 210px;
+        height: 640px;
+        background-color: $main-background;
+        overflow: auto;
+        padding-left: 3px;
+        border-radius: 5px;
+        position: relative;
+        padding-top: 20px
+    }
+
+    &__full {
+        @include fullScreen;
+    }
+
+    &__country {
+        color: $main-color;
+    }
+
+    &__flag {
+        width: 20px;
+        height: 15px;
+    }
+}

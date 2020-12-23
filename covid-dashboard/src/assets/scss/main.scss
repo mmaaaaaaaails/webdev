@@ -1,0 +1,44 @@
+@import "./hamburger.scss";
+@import "./color.scss";
+@import "./mixin.scss";
+@import "./animation.scss";
+@import "./modal.scss";
+@import "./search.scss";
+@import "./graph.scss";
+@import "./media.scss";
+@import "./footer.scss";
+@import "./header.scss";
+@import "./recovered.scss";
+@import "./death.scss";
+@import "./cases.scss";
+@import "./map.scss";
+@import "./scrollbar.scss";
+@import "./preloader.scss";
+@import "./keyboard.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 40px;
+  max-width: 1200px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-image: url(/assets/img/globus.jpg);
+  background-size: cover;
+  padding-top: 80px;
+  padding-bottom: 120px;
+}

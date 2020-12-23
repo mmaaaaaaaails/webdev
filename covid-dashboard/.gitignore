@@ -1,0 +1,4 @@
+n# Local Netlify folder
+.netlify
+node_modules
+debug.log

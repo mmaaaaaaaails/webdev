@@ -1,0 +1,10 @@
+import './js/hamburger';
+import './js/table';
+import './js/modal';
+import './js/graph';
+import './js/search';
+import './js/map';
+import './js/preloader';
+import './js/keyboard';
+import './assets/css/main.css';
+import './assets/scss/main.scss';
