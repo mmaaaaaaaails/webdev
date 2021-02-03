@@ -7,130 +7,155 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="bg">
-            <h1 class="hidden">webdev</h1>
-            <header class="header">
-                <div class="nav">
-                    <ul class="nav__item">
-                        <li class="nav__list">
-                            <a href="#About" class="nav__link nav__link--active">About</a>
+    <div class="bg">
+        <header class="header">
+            <div class="overlay"></div>
+            <div class="wrapper">
+                <div class="header__block">
+                    <h1 class="hidden">webdev</h1>
+                    <div class="header__logo"></div>
+                    <span class="hamburger" id="hamburger">
+                        <span class="hamburger__line"></span>
+                    </span>
+                    <nav class="nav">
+                        <ul class="nav__item">
+                            <li class="nav__list">
+                                <a href="#About" class="nav__link nav__link--active">About</a>
+                            </li>
+                            <li class="nav__list">
+                                <a href="#Syllabus" class="nav__link">Syllabus</a>
+                            </li>
+                            <li class="nav__list">
+                                <a href="#Projects" class="nav__link">Projects</a>
+                            </li>
+                            <li class="nav__list">
+                                <a href="#FAQ" class="nav__link">FAQ</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="your-live">
+            <div class="wrapper">
+                <div class="your-live__block">
+                    <h2 class="your-live__title">your life is WebDev</h2>
+                    <p class="your-live__text">Whatever the approach to development may be, the final<br/> program must satisfy some fundamental properties</p>
+                    <button class="your-live__btn">get started</button>
+                    <ul class="social">
+                        <li class="social__item">
+                            <a class="social__icon" href="#"><span class="icon icon__mail"></span></a>
                         </li>
-                        <li class="nav__list">
-                            <a href="#Syllabus" class="nav__link">Syllabus</a>
+                        <li class="social__item">
+                            <a class="social__icon" href="#"><span class="icon icon__facebook"></span></a>
                         </li>
-                        <li class="nav__list">
-                            <a href="#Projects" class="nav__link">Projects</a>
+                        <li class="social__item">
+                            <a class="social__icon" href="#"><span class="icon icon__insta"></span></a>
                         </li>
-                        <li class="nav__list">
-                            <a href="#FAQ" class="nav__link">FAQ</a>
+                        <li class="social__item">
+                            <a class="social__icon" href="#"><span class="icon icon__telegram"></span></a>
                         </li>
                     </ul>
                 </div>
-            </header>
-            <section class="your-live">
-                <h2 class="your-live__title">your life is WebDev</h2>
-                <p class="your-live__text">Whatever the approach to development may be, the final<br/> program must satisfy some fundamental properties</p>
-                <button class="your-live__btn">get started</button>
-                <ul class="social">
-                    <li class="social__item">
-                        <a class="social__icon" href="#"><span class="icon icon__mail"></span></a>
+            </div>
+        </section>
+    </div>
+    <section class="rappresent">
+        <div class="wrapper">
+            <div class="rappresent__block">
+                <div class="rappresent__info">
+                    <h3 class="rappresent__title">Rappresent your idea with a smart Design</h3>
+                    <p class="rappresent__text">
+                        Tasks accompanying and related to programming include: testing, debugging, source code maintenance,
+                        <strong> implementation of build systems</strong>,
+                        and management of derived artifacts, such as the machine code of computer programs.</p>
+                    <button class="rappresent__btn">get started</button>
+                </div>
+                <img src="./assets/image/content.png" alt="content" class="rappresent__picture">
+            </div>
+        </div>
+    </section>
+    <section class="community">
+        <div class="wrapper">
+            <div class="community__block">
+                <div class="community__info">
+                    <img src="./assets/image/person.svg" alt="person" class="community__person">
+                    <h3 class="community__title">our community</h3>
+                    <p class="community__text">A hacker is any skilled computer expert that uses their technical knowledge to overcome a problem, but it can also mean a security hacker in common language</p>
+                </div>
+                <div class="community__content">
+                    <img src="./assets/image/slider1.png" class="community__slider" alt="slider1">
+                    <img src="./assets/image/slider2.png" class="community__slider" alt="slider2">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="implement">
+        <div class="wrapper">
+            <div class="implement__block">
+                <img src="./assets/image/implement.jpg" class="implement__picture" alt="content">
+                <div class="implement__info">
+                    <h3 class="implement__title">Implement right Code</h3>
+                    <p class="implement__text">These might be considered part of the <strong>programming process,</strong> but often the term software development is used for this larger process with the term programming, implementation</p>
+                    <button class="implement__btn">Learn more</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sign-up">
+        <div class="wrapper">
+            <div class="sign-up__block">
+                <h3 class="sign-up__title">sign up for our newsletter</h3>
+                <form class="sign-up__form" action="#">
+                    <input class="sign-up__input" type="email" placeholder="Email" required>
+                    <button class="sign-up__btn">
+                        <img class="sign-up__icon" src="./assets/image/fa-check.svg" alt="fa-check">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="download">
+        <div class="wrapper">
+            <div class="download__block">
+                <h3 class="download__title">Download the App</h3>
+                <p class="download__text">Machine code was the language of early programs, written in the instruction set of the particular machine, often in binary notation.</p>
+                <div class="download__buttons">
+                    <button class="btn">
+                        <span class="btn__info">apple store</span>
+                        <span class="btn__ico">
+                            <img src="./assets/image/apple.svg" class="btn__mobile" alt="apple">
+                        </span>
+                    </button>
+                    <button class="btn">
+                        <span class="btn__info">Play Market</span>
+                        <span class="btn__ico">
+                            <img src="./assets/image/android.svg" class="btn__mobile" alt="android">
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__info">
+                <ul class="footer__menu">
+                    <li class="footer__item">
+                        <a class="footer__link" href="#">Credits</a>
                     </li>
-                    <li class="social__item">
-                        <a class="social__icon" href="#"><span class="icon icon__facebook"></span></a>
+                    <li class="footer__item">
+                        <a class="footer__link" href="#">Privacy</a>
                     </li>
-                    <li class="social__item">
-                        <a class="social__icon" href="#"><span class="icon icon__insta"></span></a>
-                    </li>
-                    <li class="social__item">
-                        <a class="social__icon" href="#"><span class="icon icon__telegram"></span></a>
+                    <li class="footer__item">
+                        <a class="footer__link" href="#">Our teams</a>
                     </li>
                 </ul>
-            </section>
+                <div class="footer__logo"></div>
+                <p class="footer__text">by TonYem for RSS at 2020</p>
+            </div>
         </div>
-        <section class="rappresent">
-            <div class="rappresent__info">
-                <h3 class="rappresent__title">Rappresent your idea with a smart Design</h3>
-                <p class="rappresent__text">
-                    Tasks accompanying and related to programming include: testing, debugging, source code maintenance,
-                    <strong> implementation of build systems</strong>,
-                    and management of derived artifacts, such as the machine code of computer programs.</p>
-                <button class="rappresent__btn">get started</button>
-            </div>
-            <img src="./assets/image/content.png" alt="content" class="rappresent__picture">
-        </section>
-        <section class="community">
-            <div class="community__info">
-                <img src="./assets/image/person.svg" alt="person" class="community__person">
-                <h3 class="community__title">our community</h3>
-                <p class="community__text">A hacker is any skilled computer expert that uses their technical knowledge to overcome a problem, but it can also mean a security hacker in common language</p>
-            </div>
-            <div class="community__content">
-                <img src="./assets/image/slider1.png" class="community__slider" alt="slider1">
-                <img src="./assets/image/slider2.png" class="community__slider" alt="slider2">
-                <img src="./assets/image/slider-3.png" class="community__slider" alt="slider3">
-            </div>
-            <div class="slider-nav">
-                <img src="./assets/image/arrowL.svg" class="slider-nav__arrow-left" alt="arrow left">
-                <span class="slider-nav__pagination">1</span>
-                <span class="slider-nav__pagination">/</span>
-                <span class="slider-nav__pagination">5</span>
-                <img src="./assets/image/arrowR.svg" class="slider-nav__arrow-right" alt="arrow right">
-            </div>
-        </section>
-        <section class="implement">
-            <img src="./assets/image/implement.jpg" class="implement__picture" alt="content">
-            <div class="implement__info">
-                <h3 class="implement__title">Implement right Code</h3>
-                <p class="implement__text">These might be considered part of the <strong>programming process,</strong> but often the term software development is used for this larger process with the term programming, implementation</p>
-                <button class="implement__btn">Learn more</button>
-            </div>
-        </section>
-        <section class="sign-up">
-            <h3 class="sign-up__title">sign up for our newsletter</h3>
-            <form class="sign-up__form" action="#">
-                <input class="sign-up__input" type="email" placeholder="Email" required>
-                <button class="sign-up__btn">
-                    <img class="sign-up__icon" src="./assets/image/fa-check.svg" alt="fa-check">
-                </button>
-            </form>
-        </section>
-        <section class="download">
-            <h3 class="download__title">Download the App</h3>
-            <p class="download__text">Machine code was the language of early programs, written in the instruction set of the particular machine, often in binary notation.</p>
-            <div class="download__buttons">
-                <button class="btn">
-                    <span class="btn__info">apple store</span>
-                    <span class="btn__ico">
-                        <img src="./assets/image/apple.svg" class="btn__mobile" alt="apple">
-                    </span>
-                </button>
-                <button class="btn">
-                    <span class="btn__info">Play Market</span>
-                    <span class="btn__ico">
-                        <img src="./assets/image/android.svg" class="btn__mobile" alt="android">
-                    </span>
-                </button>
-            </div>
-        </section>
-        <footer class="footer">
-            <div class="footer__wrapper">
-                <div class="footer__info">
-                    <ul class="footer__menu">
-                        <li class="footer__item">
-                            <a class="footer__link" href="#">Credits</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="#">Privacy</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="#">Our teams</a>
-                        </li>
-                    </ul>
-                    <p class="footer__text">by TonYem for RSS at 2020</p>
-                </div>
-            </div>
-        </footer>
-    </div>
+    </footer>
+    <script src="index.js"></script>
 </body>
 </html>
